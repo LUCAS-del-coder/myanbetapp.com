@@ -184,12 +184,136 @@
             position: relative;
             overflow: hidden;
             background: 
-                linear-gradient(135deg, rgba(15, 15, 30, 0.9) 0%, rgba(26, 26, 46, 0.9) 50%, rgba(22, 33, 62, 0.9) 100%),
-                url('https://images.unsplash.com/photo-1511192336575-5a79af67a629?w=1920&q=80') center/cover,
+                linear-gradient(135deg, rgba(15, 15, 30, 0.85) 0%, rgba(26, 26, 46, 0.85) 50%, rgba(22, 33, 62, 0.85) 100%),
+                url('https://images.unsplash.com/photo-1596838132731-3301c3fd4317?w=1920&q=80') center/cover,
                 linear-gradient(135deg, #0F0F1E 0%, #1A1A2E 50%, #16213E 100%);
             background-blend-mode: overlay, normal;
             z-index: 2;
         }
+
+        /* 老虎機裝飾元素 */
+        .slot-machine-decoration {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .slot-reel {
+            position: absolute;
+            width: 120px;
+            height: 200px;
+            background: linear-gradient(180deg, rgba(212, 175, 55, 0.1) 0%, rgba(20, 20, 35, 0.8) 100%);
+            border: 3px solid rgba(212, 175, 55, 0.5);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.3);
+        }
+
+        .slot-reel::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 33.33%;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, transparent 100%);
+            z-index: 2;
+        }
+
+        .slot-reel::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 33.33%;
+            background: linear-gradient(0deg, rgba(255, 255, 255, 0.1) 0%, transparent 100%);
+            z-index: 2;
+        }
+
+        .slot-symbols {
+            position: absolute;
+            width: 100%;
+            height: 300%;
+            top: -100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            animation: spinReel 3s linear infinite;
+        }
+
+        @keyframes spinReel {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(33.33%); }
+        }
+
+        .slot-symbol {
+            font-size: 4rem;
+            line-height: 200px;
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
+            filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.6));
+        }
+
+        .slot-reel-1 {
+            top: 20%;
+            left: 10%;
+            animation: floatReel 6s ease-in-out infinite;
+        }
+
+        .slot-reel-2 {
+            top: 30%;
+            right: 15%;
+            animation: floatReel 8s ease-in-out infinite 1s;
+        }
+
+        .slot-reel-3 {
+            bottom: 20%;
+            left: 20%;
+            animation: floatReel 7s ease-in-out infinite 2s;
+        }
+
+        @keyframes floatReel {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+
+        /* 老虎機燈光效果 */
+        .slot-lights {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .light-bulb {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255, 215, 0, 0.8) 0%, rgba(212, 175, 55, 0.4) 100%);
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.8), 0 0 40px rgba(255, 215, 0, 0.4);
+            animation: blink 1.5s ease-in-out infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.3; transform: scale(0.8); }
+        }
+
+        .light-bulb:nth-child(1) { top: 15%; left: 10%; animation-delay: 0s; }
+        .light-bulb:nth-child(2) { top: 25%; right: 15%; animation-delay: 0.3s; }
+        .light-bulb:nth-child(3) { bottom: 25%; left: 15%; animation-delay: 0.6s; }
+        .light-bulb:nth-child(4) { top: 50%; left: 50%; animation-delay: 0.9s; }
+        .light-bulb:nth-child(5) { bottom: 15%; right: 10%; animation-delay: 1.2s; }
 
         .hero::before {
             content: '';
@@ -347,11 +471,40 @@
             padding: 4rem 2rem;
             background: 
                 linear-gradient(135deg, rgba(26, 26, 46, 0.85) 0%, rgba(20, 20, 35, 0.85) 100%),
-                url('https://images.unsplash.com/photo-1606889464198-fcb18894a52c?w=1920&q=80') center/cover;
+                url('https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=1920&q=80') center/cover;
             backdrop-filter: blur(10px);
             position: relative;
             z-index: 2;
         }
+
+        /* 老虎機背景裝飾 */
+        .slot-bg-decoration {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            pointer-events: none;
+            opacity: 0.1;
+        }
+
+        .slot-icon {
+            position: absolute;
+            font-size: 3rem;
+            opacity: 0.3;
+            animation: slotFloat 8s ease-in-out infinite;
+        }
+
+        @keyframes slotFloat {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-30px) rotate(180deg); }
+        }
+
+        .slot-icon:nth-child(1) { top: 10%; left: 5%; animation-delay: 0s; }
+        .slot-icon:nth-child(2) { top: 20%; right: 10%; animation-delay: 2s; }
+        .slot-icon:nth-child(3) { bottom: 20%; left: 8%; animation-delay: 4s; }
+        .slot-icon:nth-child(4) { bottom: 10%; right: 5%; animation-delay: 6s; }
 
         .casino-logos::before {
             content: '';
@@ -437,6 +590,30 @@
                 url('https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=1920&q=80') center/cover;
             background-attachment: fixed;
             z-index: 2;
+        }
+
+        /* 獎金區老虎機特效 */
+        .bonus-slot-effect {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .spinning-symbol {
+            position: absolute;
+            font-size: 2.5rem;
+            opacity: 0.2;
+            animation: spinSymbol 4s linear infinite;
+        }
+
+        @keyframes spinSymbol {
+            0% { transform: rotate(0deg) scale(1); }
+            50% { transform: rotate(180deg) scale(1.2); }
+            100% { transform: rotate(360deg) scale(1); }
         }
 
         .bonus-section::before {
@@ -605,7 +782,7 @@
             padding: 6rem 2rem;
             background: 
                 linear-gradient(180deg, rgba(15, 15, 30, 0.9) 0%, rgba(26, 26, 46, 0.9) 100%),
-                url('https://images.unsplash.com/photo-1596838132731-3301c3fd4317?w=1920&q=80') center/cover;
+                url('https://images.unsplash.com/photo-1606889464198-fcb18894a52c?w=1920&q=80') center/cover;
             background-attachment: fixed;
             position: relative;
             z-index: 2;
@@ -698,7 +875,7 @@
             padding: 6rem 2rem;
             background: 
                 linear-gradient(135deg, rgba(26, 26, 46, 0.9) 0%, rgba(20, 20, 35, 0.9) 100%),
-                url('https://images.unsplash.com/photo-1567427017947-545c5f8d16ad?w=1920&q=80') center/cover;
+                url('https://images.unsplash.com/photo-1596838132731-3301c3fd4317?w=1920&q=80') center/cover;
             background-attachment: fixed;
             position: relative;
             z-index: 2;
@@ -729,7 +906,7 @@
             padding: 6rem 2rem;
             background: 
                 linear-gradient(135deg, rgba(15, 15, 30, 0.9) 0%, rgba(26, 26, 46, 0.9) 100%),
-                url('https://images.unsplash.com/photo-1600891964092-4316c288032e?w=1920&q=80') center/cover;
+                url('https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=1920&q=80') center/cover;
             background-attachment: fixed;
             position: relative;
             z-index: 2;
@@ -771,7 +948,7 @@
         footer {
             background: 
                 linear-gradient(135deg, rgba(26, 26, 46, 0.95) 0%, rgba(20, 20, 35, 0.95) 100%),
-                url('https://images.unsplash.com/photo-1511192336575-5a79af67a629?w=1920&q=80') center/cover;
+                url('https://images.unsplash.com/photo-1596838132731-3301c3fd4317?w=1920&q=80') center/cover;
             padding: 4rem 2rem 2rem;
             border-top: 1px solid rgba(212, 175, 55, 0.2);
             position: relative;
@@ -878,6 +1055,47 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
+        <!-- 老虎機裝飾 -->
+        <div class="slot-machine-decoration">
+            <div class="slot-reel slot-reel-1">
+                <div class="slot-symbols">
+                    <div class="slot-symbol">🍒</div>
+                    <div class="slot-symbol">🍋</div>
+                    <div class="slot-symbol">🍊</div>
+                    <div class="slot-symbol">⭐</div>
+                    <div class="slot-symbol">💎</div>
+                    <div class="slot-symbol">7️⃣</div>
+                </div>
+            </div>
+            <div class="slot-reel slot-reel-2">
+                <div class="slot-symbols">
+                    <div class="slot-symbol">🍒</div>
+                    <div class="slot-symbol">🍋</div>
+                    <div class="slot-symbol">🍊</div>
+                    <div class="slot-symbol">⭐</div>
+                    <div class="slot-symbol">💎</div>
+                    <div class="slot-symbol">7️⃣</div>
+                </div>
+            </div>
+            <div class="slot-reel slot-reel-3">
+                <div class="slot-symbols">
+                    <div class="slot-symbol">🍒</div>
+                    <div class="slot-symbol">🍋</div>
+                    <div class="slot-symbol">🍊</div>
+                    <div class="slot-symbol">⭐</div>
+                    <div class="slot-symbol">💎</div>
+                    <div class="slot-symbol">7️⃣</div>
+                </div>
+            </div>
+        </div>
+        <!-- 老虎機燈光 -->
+        <div class="slot-lights">
+            <div class="light-bulb"></div>
+            <div class="light-bulb"></div>
+            <div class="light-bulb"></div>
+            <div class="light-bulb"></div>
+            <div class="light-bulb"></div>
+        </div>
         <div class="hero-content">
             <h1>မြန်မာ အွန်လိုင်း ကာစီနို</h1>
             <div class="hero-buttons">
@@ -890,6 +1108,13 @@
     <!-- Casino Logos -->
     <!-- 🔗 連結位置 1: Casino Logos 區塊 - 需要更換的賭場連結 -->
     <section class="casino-logos">
+        <!-- 老虎機背景裝飾 -->
+        <div class="slot-bg-decoration">
+            <div class="slot-icon">🎰</div>
+            <div class="slot-icon">🎲</div>
+            <div class="slot-icon">🎰</div>
+            <div class="slot-icon">🎲</div>
+        </div>
         <div class="casino-grid">
             <!-- Myan99 連結 -->
             <a href="https://www.myan99.me/m/home?affiliateCode=seom201" class="casino-card">
@@ -915,6 +1140,14 @@
 
     <!-- Bonus Section -->
     <section id="bonus" class="bonus-section">
+        <!-- 獎金區老虎機特效 -->
+        <div class="bonus-slot-effect">
+            <div class="spinning-symbol" style="top: 10%; left: 5%;">🎰</div>
+            <div class="spinning-symbol" style="top: 20%; right: 8%; animation-delay: 0.5s;">🎲</div>
+            <div class="spinning-symbol" style="bottom: 15%; left: 10%; animation-delay: 1s;">💎</div>
+            <div class="spinning-symbol" style="bottom: 25%; right: 12%; animation-delay: 1.5s;">⭐</div>
+            <div class="spinning-symbol" style="top: 50%; left: 50%; animation-delay: 2s;">7️⃣</div>
+        </div>
         <h2 class="section-title">ဂိမ်းဘောနပ်စ်များ ရယူပါ!</h2>
         <div class="bonus-list">
             <div class="bonus-item">
