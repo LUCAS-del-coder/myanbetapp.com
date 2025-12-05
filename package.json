@@ -1,0 +1,20 @@
+{
+  "name": "myanmar-casino-landing",
+  "version": "1.0.0",
+  "description": "Myanmar Casino Landing Page",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [
+    "casino",
+    "myanmar",
+    "landing-page"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
+
