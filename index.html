@@ -248,11 +248,22 @@
             position: relative;
             overflow: hidden;
             background: 
-                linear-gradient(135deg, rgba(15, 23, 42, 0.85) 0%, rgba(30, 58, 138, 0.85) 50%, rgba(59, 130, 246, 0.85) 100%),
+                linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 58, 138, 0.95) 50%, rgba(59, 130, 246, 0.95) 100%),
                 url('https://images.unsplash.com/photo-1596838132731-3301c3fd4317?w=1920&q=80') center/cover;
-            background-blend-mode: overlay;
+            background-blend-mode: darken;
             z-index: 2;
             padding: 3rem 0;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(15, 23, 42, 0.6);
+            z-index: 1;
         }
 
         /* 老虎機裝飾元素 */
@@ -413,10 +424,11 @@
 
         .hero-content {
             text-align: center;
-            z-index: 2;
+            z-index: 3;
             max-width: 900px;
             padding: 2rem;
             animation: fadeInUp 1s ease-out;
+            position: relative;
         }
 
         @keyframes fadeInUp {
@@ -530,12 +542,23 @@
         .casino-logos {
             padding: 3rem 2rem;
             background: 
-                linear-gradient(135deg, rgba(30, 58, 138, 0.9) 0%, rgba(37, 99, 235, 0.9) 100%),
+                linear-gradient(135deg, rgba(30, 58, 138, 0.95) 0%, rgba(37, 99, 235, 0.95) 100%),
                 url('https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=1920&q=80') center/cover;
-            background-blend-mode: overlay;
+            background-blend-mode: darken;
             position: relative;
             z-index: 2;
             margin-top: 0;
+        }
+
+        .casino-logos::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(15, 23, 42, 0.7);
+            z-index: 1;
         }
 
         /* 老虎機背景裝飾 */
@@ -588,6 +611,8 @@
             grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
             gap: 1.5rem;
             animation: fadeIn 1s ease-out;
+            position: relative;
+            z-index: 2;
         }
 
         @keyframes fadeIn {
@@ -648,11 +673,22 @@
             padding: 6rem 2rem;
             position: relative;
             background: 
-                linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(30, 58, 138, 0.9) 100%),
+                linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 58, 138, 0.95) 100%),
                 url('https://images.unsplash.com/photo-1606889464198-fcb18894a52c?w=1920&q=80') center/cover;
             background-attachment: fixed;
-            background-blend-mode: overlay;
+            background-blend-mode: darken;
             z-index: 2;
+        }
+
+        .bonus-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(15, 23, 42, 0.7);
+            z-index: 1;
         }
 
         /* 獎金區老虎機特效 */
@@ -715,6 +751,11 @@
             display: flex;
             flex-direction: column;
             gap: 2rem;
+            position: relative;
+            z-index: 3;
+        }
+
+        .bonus-section .section-title {
             position: relative;
             z-index: 3;
         }
@@ -836,12 +877,23 @@
         .games-section {
             padding: 6rem 2rem;
             background: 
-                linear-gradient(180deg, rgba(30, 58, 138, 0.9) 0%, rgba(37, 99, 235, 0.9) 100%),
+                linear-gradient(180deg, rgba(30, 58, 138, 0.95) 0%, rgba(37, 99, 235, 0.95) 100%),
                 url('https://images.unsplash.com/photo-1596838132731-3301c3fd4317?w=1920&q=80') center/cover;
             background-attachment: fixed;
-            background-blend-mode: overlay;
+            background-blend-mode: darken;
             position: relative;
             z-index: 2;
+        }
+
+        .games-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(15, 23, 42, 0.7);
+            z-index: 1;
         }
 
         .games-grid {
@@ -850,6 +902,13 @@
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .games-section .section-title {
+            position: relative;
+            z-index: 3;
         }
 
         .game-card {
@@ -925,18 +984,31 @@
         .about-section {
             padding: 6rem 2rem;
             background: 
-                linear-gradient(135deg, rgba(37, 99, 235, 0.9) 0%, rgba(59, 130, 246, 0.9) 100%),
+                linear-gradient(135deg, rgba(37, 99, 235, 0.95) 0%, rgba(59, 130, 246, 0.95) 100%),
                 url('https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=1920&q=80') center/cover;
             background-attachment: fixed;
-            background-blend-mode: overlay;
+            background-blend-mode: darken;
             position: relative;
             z-index: 2;
+        }
+
+        .about-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(15, 23, 42, 0.7);
+            z-index: 1;
         }
 
         .about-content {
             max-width: 1000px;
             margin: 0 auto;
             text-align: center;
+            position: relative;
+            z-index: 3;
         }
 
         .about-content h2 {
@@ -957,17 +1029,35 @@
         .faq-section {
             padding: 6rem 2rem;
             background: 
-                linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(30, 58, 138, 0.9) 100%),
+                linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 58, 138, 0.95) 100%),
                 url('https://images.unsplash.com/photo-1606889464198-fcb18894a52c?w=1920&q=80') center/cover;
             background-attachment: fixed;
-            background-blend-mode: overlay;
+            background-blend-mode: darken;
             position: relative;
             z-index: 2;
+        }
+
+        .faq-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(15, 23, 42, 0.7);
+            z-index: 1;
         }
 
         .faq-container {
             max-width: 1000px;
             margin: 0 auto;
+            position: relative;
+            z-index: 3;
+        }
+
+        .faq-section .section-title {
+            position: relative;
+            z-index: 3;
         }
 
         .faq-item {
@@ -1002,11 +1092,22 @@
             background: 
                 linear-gradient(135deg, rgba(30, 58, 138, 0.95) 0%, rgba(37, 99, 235, 0.95) 100%),
                 url('https://images.unsplash.com/photo-1596838132731-3301c3fd4317?w=1920&q=80') center/cover;
-            background-blend-mode: overlay;
+            background-blend-mode: darken;
             padding: 4rem 2rem 2rem;
             border-top: 1px solid rgba(96, 165, 250, 0.3);
             position: relative;
             z-index: 2;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(15, 23, 42, 0.7);
+            z-index: 1;
         }
 
         .footer-content {
@@ -1016,6 +1117,8 @@
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 3rem;
             margin-bottom: 2rem;
+            position: relative;
+            z-index: 2;
         }
 
         .footer-section h3 {
