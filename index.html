@@ -6,17 +6,17 @@
     <title>Myanmar Casino 🎰 အွန်လိုင်းကာစီနို</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Cormorant+Garamond:wght@300;400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #3B82F6;
-            --secondary: #1E3A8A;
-            --accent: #60A5FA;
-            --dark: #0F172A;
-            --light: #F8FAFC;
-            --sapphire-gradient: linear-gradient(135deg, #3B82F6 0%, #2563EB 50%, #1E40AF 100%);
-            --dark-gradient: linear-gradient(135deg, #0F172A 0%, #1E3A8A 100%);
-            --blue-gradient: linear-gradient(135deg, #1E40AF 0%, #3B82F6 50%, #60A5FA 100%);
+            --royal-purple: #6B1B9A;
+            --deep-magenta: #8E2B5F;
+            --gold: #FFD700;
+            --rose-gold: #E8B4A8;
+            --dark-wine: #2D0A1F;
+            --midnight: #0A0212;
+            --soft-white: #FDF8F3;
+            --accent-cyan: #00D9FF;
         }
 
         * {
@@ -26,143 +26,106 @@
         }
 
         body {
-            font-family: 'Inter', sans-serif;
-            background: var(--dark);
-            color: var(--light);
+            font-family: 'DM Sans', sans-serif;
+            background: linear-gradient(135deg, var(--midnight) 0%, var(--dark-wine) 50%, var(--royal-purple) 100%);
+            color: var(--soft-white);
             overflow-x: hidden;
             position: relative;
+            min-height: 100vh;
         }
 
-        /* 背景粒子效果容器 */
-        #particles-canvas {
+        /* 仿真老虎機背景層 - 多層疊加 */
+        .bg-grid {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
+            background-image:
+                /* 老虎機1 - 右上角 */
+                url("data:image/svg+xml,%3Csvg width='500' height='600' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3ClinearGradient id='g1' x1='0%25' y1='0%25' x2='0%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23C9A961;stop-opacity:1'/%3E%3Cstop offset='50%25' style='stop-color:%23FFD700;stop-opacity:1'/%3E%3Cstop offset='100%25' style='stop-color:%23B8860B;stop-opacity:1'/%3E%3C/linearGradient%3E%3CradialGradient id='g2'%3E%3Cstop offset='0%25' style='stop-color:%234A0E4E;stop-opacity:1'/%3E%3Cstop offset='100%25' style='stop-color:%23000000;stop-opacity:1'/%3E%3C/radialGradient%3E%3C/defs%3E%3Crect width='500' height='600' fill='none'/%3E%3Cg transform='translate(50,50)'%3E%3Crect x='0' y='0' width='400' height='500' rx='30' fill='url(%23g1)' stroke='%23FFA500' stroke-width='6'/%3E%3Crect x='15' y='15' width='370' height='470' rx='20' fill='%232A0A2E' stroke='%23FFD700' stroke-width='3'/%3E%3Crect x='40' y='70' width='100' height='100' rx='10' fill='url(%23g2)' stroke='%23FFD700' stroke-width='3'/%3E%3Ctext x='90' y='135' font-size='60' font-weight='bold' fill='%23FFD700' text-anchor='middle' font-family='serif'%3E7%3C/text%3E%3Crect x='150' y='70' width='100' height='100' rx='10' fill='url(%23g2)' stroke='%23FFD700' stroke-width='3'/%3E%3Ctext x='200' y='145' font-size='70' fill='%23FF1744' text-anchor='middle'%3E🍒%3C/text%3E%3Crect x='260' y='70' width='100' height='100' rx='10' fill='url(%23g2)' stroke='%23FFD700' stroke-width='3'/%3E%3Ctext x='310' y='145' font-size='70' fill='%2300E5FF' text-anchor='middle'%3E💎%3C/text%3E%3Crect x='40' y='190' width='320' height='80' rx='15' fill='%23000000' stroke='%23FFA500' stroke-width='2'/%3E%3Ctext x='200' y='240' font-size='35' font-weight='bold' fill='%23FFD700' text-anchor='middle'%3EJACKPOT%3C/text%3E%3Cellipse cx='200' cy='320' rx='70' ry='35' fill='%23DC143C' stroke='%23FFD700' stroke-width='3'/%3E%3Ctext x='200' y='332' font-size='24' font-weight='bold' fill='%23FFFFFF' text-anchor='middle'%3ESPIN%3C/text%3E%3Ccircle cx='80' cy='400' r='18' fill='%23FFD700'/%3E%3Ccircle cx='80' cy='400' r='12' fill='%23FFA500'/%3E%3Ccircle cx='150' cy='400' r='18' fill='%23FFD700'/%3E%3Ccircle cx='150' cy='400' r='12' fill='%23FFA500'/%3E%3Ccircle cx='220' cy='400' r='18' fill='%23FFD700'/%3E%3Ccircle cx='220' cy='400' r='12' fill='%23FFA500'/%3E%3Ccircle cx='290' cy='400' r='18' fill='%23FFD700'/%3E%3Ccircle cx='290' cy='400' r='12' fill='%23FFA500'/%3E%3Ccircle cx='320' cy='400' r='18' fill='%23FFD700'/%3E%3Ccircle cx='320' cy='400' r='12' fill='%23FFA500'/%3E%3Crect x='60' y='440' width='280' height='30' rx='5' fill='%23B8860B'/%3E%3C/g%3E%3C/svg%3E"),
+                /* 撲克牌組 - 左下角 */
+                url("data:image/svg+xml,%3Csvg width='400' height='300' xmlns='http://www.w3.org/2000/svg'%3E%3Cg transform='rotate(-15 200 150)'%3E%3Crect x='50' y='30' width='100' height='150' rx='10' fill='%23FFFFFF' stroke='%23000000' stroke-width='3'/%3E%3Ctext x='100' y='80' font-size='50' fill='%23FF0000' text-anchor='middle'%3E♥%3C/text%3E%3Ctext x='100' y='130' font-size='45' font-weight='bold' fill='%23000000' text-anchor='middle'%3EA%3C/text%3E%3C/g%3E%3Cg transform='rotate(-5 200 150)'%3E%3Crect x='120' y='50' width='100' height='150' rx='10' fill='%23FFFFFF' stroke='%23000000' stroke-width='3'/%3E%3Ctext x='170' y='100' font-size='50' fill='%23000000' text-anchor='middle'%3E♠%3C/text%3E%3Ctext x='170' y='150' font-size='45' font-weight='bold' fill='%23000000' text-anchor='middle'%3EK%3C/text%3E%3C/g%3E%3Cg transform='rotate(10 200 150)'%3E%3Crect x='190' y='70' width='100' height='150' rx='10' fill='%23FFFFFF' stroke='%23000000' stroke-width='3'/%3E%3Ctext x='240' y='120' font-size='50' fill='%23FF0000' text-anchor='middle'%3E♦%3C/text%3E%3Ctext x='240' y='170' font-size='45' font-weight='bold' fill='%23000000' text-anchor='middle'%3EQ%3C/text%3E%3C/g%3E%3C/svg%3E"),
+                /* 籌碼堆 - 右下角 */
+                url("data:image/svg+xml,%3Csvg width='200' height='200' xmlns='http://www.w3.org/2000/svg'%3E%3Cg%3E%3Cellipse cx='100' cy='160' rx='60' ry='15' fill='%23DC143C' stroke='%23FFFFFF' stroke-width='3'/%3E%3Cellipse cx='100' cy='155' rx='60' ry='15' fill='%23FF1744' stroke='%23FFFFFF' stroke-width='3'/%3E%3Cellipse cx='100' cy='150' rx='60' ry='15' fill='%23DC143C' stroke='%23FFFFFF' stroke-width='3'/%3E%3Cellipse cx='100' cy='150' rx='45' ry='12' fill='none' stroke='%23FFFFFF' stroke-width='2' stroke-dasharray='5,3'/%3E%3Ctext x='100' y='155' font-size='20' font-weight='bold' fill='%23FFFFFF' text-anchor='middle'%3E$100%3C/text%3E%3C/g%3E%3Cg transform='translate(-30,-40)'%3E%3Cellipse cx='100' cy='160' rx='60' ry='15' fill='%230000CD' stroke='%23FFFFFF' stroke-width='3'/%3E%3Cellipse cx='100' cy='155' rx='60' ry='15' fill='%231E90FF' stroke='%23FFFFFF' stroke-width='3'/%3E%3Cellipse cx='100' cy='150' rx='60' ry='15' fill='%230000CD' stroke='%23FFFFFF' stroke-width='3'/%3E%3Cellipse cx='100' cy='150' rx='45' ry='12' fill='none' stroke='%23FFFFFF' stroke-width='2' stroke-dasharray='5,3'/%3E%3Ctext x='100' y='155' font-size='18' font-weight='bold' fill='%23FFFFFF' text-anchor='middle'%3E$500%3C/text%3E%3C/g%3E%3C/svg%3E"),
+                /* 骰子 - 上方中間 */
+                url("data:image/svg+xml,%3Csvg width='150' height='150' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3ClinearGradient id='dice' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23FFFFFF;stop-opacity:1'/%3E%3Cstop offset='100%25' style='stop-color:%23E0E0E0;stop-opacity:1'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cg transform='rotate(30 75 75)'%3E%3Crect x='20' y='20' width='80' height='80' rx='12' fill='url(%23dice)' stroke='%23000000' stroke-width='2'/%3E%3Ccircle cx='40' cy='40' r='6' fill='%23000000'/%3E%3Ccircle cx='85' cy='40' r='6' fill='%23000000'/%3E%3Ccircle cx='40' cy='85' r='6' fill='%23000000'/%3E%3Ccircle cx='85' cy='85' r='6' fill='%23000000'/%3E%3Ccircle cx='60' cy='60' r='6' fill='%23000000'/%3E%3C/g%3E%3C/svg%3E"),
+                /* Roulette 輪盤 - 左上角 */
+                url("data:image/svg+xml,%3Csvg width='300' height='300' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3CradialGradient id='roulette'%3E%3Cstop offset='0%25' style='stop-color:%23FFD700;stop-opacity:1'/%3E%3Cstop offset='100%25' style='stop-color:%23B8860B;stop-opacity:1'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='150' cy='150' r='120' fill='url(%23roulette)' stroke='%23000000' stroke-width='4'/%3E%3Ccircle cx='150' cy='150' r='110' fill='%23000000' stroke='%23FFD700' stroke-width='2'/%3E%3Cpath d='M 150 150 L 150 40 A 110 110 0 0 1 223 95 Z' fill='%23DC143C'/%3E%3Cpath d='M 150 150 L 223 95 A 110 110 0 0 1 260 150 Z' fill='%23000000'/%3E%3Cpath d='M 150 150 L 260 150 A 110 110 0 0 1 223 205 Z' fill='%23DC143C'/%3E%3Cpath d='M 150 150 L 223 205 A 110 110 0 0 1 150 260 Z' fill='%23000000'/%3E%3Cpath d='M 150 150 L 150 260 A 110 110 0 0 1 77 205 Z' fill='%23DC143C'/%3E%3Cpath d='M 150 150 L 77 205 A 110 110 0 0 1 40 150 Z' fill='%23000000'/%3E%3Cpath d='M 150 150 L 40 150 A 110 110 0 0 1 77 95 Z' fill='%23DC143C'/%3E%3Cpath d='M 150 150 L 77 95 A 110 110 0 0 1 150 40 Z' fill='%23000000'/%3E%3Ccircle cx='150' cy='150' r='40' fill='%23FFD700' stroke='%23000000' stroke-width='3'/%3E%3Ccircle cx='150' cy='150' r='20' fill='%23FFFFFF'/%3E%3C/svg%3E");
+            background-position:
+                85% 5%,      /* 老虎機 */
+                5% 75%,      /* 撲克牌 */
+                90% 85%,     /* 籌碼 */
+                45% 8%,      /* 骰子 */
+                8% 15%;      /* 輪盤 */
+            background-repeat: no-repeat;
+            background-size:
+                400px auto,
+                300px auto,
+                150px auto,
+                100px auto,
+                220px auto;
+            pointer-events: none;
             z-index: 0;
-            pointer-events: none;
+            opacity: 0.12;
         }
 
-        /* 閃閃發光特效 */
-        .sparkle {
+        @keyframes gridMove {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
+        }
+
+        /* 光暈粒子層 */
+        .particle-layer {
             position: fixed;
-            width: 4px;
-            height: 4px;
-            background: #FFFFFF;
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: 999;
-            box-shadow: 0 0 10px #FFFFFF, 0 0 20px #60A5FA, 0 0 30px #3B82F6;
-            animation: sparkleAnimation 2s ease-in-out infinite;
-        }
-
-        @keyframes sparkleAnimation {
-            0%, 100% {
-                opacity: 0;
-                transform: scale(0) rotate(0deg);
-            }
-            50% {
-                opacity: 1;
-                transform: scale(1) rotate(180deg);
-            }
-        }
-
-        .star {
-            position: fixed;
-            width: 6px;
-            height: 6px;
-            background: #FFFFFF;
-            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
-            pointer-events: none;
-            z-index: 999;
-            animation: starTwinkle 1.5s ease-in-out infinite;
-            box-shadow: 0 0 15px #FFFFFF, 0 0 25px #60A5FA;
-        }
-
-        @keyframes starTwinkle {
-            0%, 100% {
-                opacity: 0.3;
-                transform: scale(0.8);
-            }
-            50% {
-                opacity: 1;
-                transform: scale(1.2);
-            }
-        }
-
-        .glow-dot {
-            position: fixed;
-            width: 8px;
-            height: 8px;
-            background: radial-gradient(circle, #60A5FA 0%, transparent 70%);
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: 999;
-            animation: glowPulse 2s ease-in-out infinite;
-            box-shadow: 0 0 20px #60A5FA, 0 0 40px #3B82F6;
-        }
-
-        @keyframes glowPulse {
-            0%, 100% {
-                opacity: 0.4;
-                transform: scale(1);
-            }
-            50% {
-                opacity: 1;
-                transform: scale(1.5);
-            }
-        }
-
-        /* 閃爍的金幣裝飾 */
-        .floating-coins {
-            position: fixed;
-            width: 100%;
-            height: 100%;
             top: 0;
             left: 0;
-            z-index: 1;
+            width: 100%;
+            height: 100%;
             pointer-events: none;
+            z-index: 1;
             overflow: hidden;
         }
 
-        .coin {
+        .orb {
             position: absolute;
-            font-size: 2rem;
-            opacity: 0;
-            animation: floatCoin 15s infinite;
+            border-radius: 50%;
+            filter: blur(60px);
+            opacity: 0.4;
+            animation: float 15s ease-in-out infinite;
         }
 
-        @keyframes floatCoin {
-            0% {
-                transform: translateY(100vh) rotate(0deg);
-                opacity: 0;
-            }
-            10% {
-                opacity: 0.6;
-            }
-            90% {
-                opacity: 0.6;
-            }
-            100% {
-                transform: translateY(-100px) rotate(360deg);
-                opacity: 0;
-            }
+        .orb-1 {
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, var(--royal-purple), transparent);
+            top: 10%;
+            left: 10%;
+            animation-delay: 0s;
         }
 
-        /* 背景裝飾圖案 */
-        .bg-pattern {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 0;
-            opacity: 0.03;
-            background-image: 
-                repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(212, 175, 55, 0.1) 35px, rgba(212, 175, 55, 0.1) 70px),
-                repeating-linear-gradient(-45deg, transparent, transparent 35px, rgba(255, 215, 0, 0.1) 35px, rgba(255, 215, 0, 0.1) 70px);
-            pointer-events: none;
+        .orb-2 {
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, var(--deep-magenta), transparent);
+            top: 60%;
+            right: 10%;
+            animation-delay: 5s;
+        }
+
+        .orb-3 {
+            width: 350px;
+            height: 350px;
+            background: radial-gradient(circle, var(--gold), transparent);
+            bottom: 20%;
+            left: 40%;
+            animation-delay: 10s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(50px, -30px) scale(1.1); }
+            66% { transform: translate(-30px, 50px) scale(0.9); }
         }
 
         /* Navigation */
@@ -170,12 +133,11 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(15, 23, 42, 0.95);
-            backdrop-filter: blur(10px);
+            background: rgba(10, 2, 18, 0.85);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 215, 0, 0.2);
             z-index: 1000;
-            padding: 1rem 0;
-            border-bottom: 2px solid rgba(59, 130, 246, 0.3);
-            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.5);
+            padding: 1.5rem 0;
         }
 
         .nav-container {
@@ -184,262 +146,152 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0 2rem;
+            padding: 0 3rem;
         }
 
         .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
+            font-family: 'Cinzel', serif;
+            font-size: 2rem;
             font-weight: 900;
-            background: var(--sapphire-gradient);
+            background: linear-gradient(135deg, var(--gold) 0%, var(--rose-gold) 50%, var(--gold) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            letter-spacing: -1px;
+            letter-spacing: 2px;
+            text-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
             position: relative;
         }
 
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: var(--light);
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 0.95rem;
-            transition: all 0.3s;
-            position: relative;
-        }
-
-        .nav-links a::after {
-            content: '';
+        .logo::after {
+            content: '♦';
             position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--sapphire-gradient);
-            transition: width 0.3s;
+            top: -5px;
+            right: -25px;
+            font-size: 1.2rem;
+            color: var(--gold);
+            animation: spin 3s linear infinite;
         }
 
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
-        .menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            color: #60A5FA;
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-
-        /* Hero Section - 背景圖 1 (與2號合併成一個區塊) */
-        .hero {
-            margin-top: 80px;
-            min-height: auto;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-            background: url('https://images.unsplash.com/photo-1596838132731-3301c3fd4317?w=1920&q=80') center/cover;
-            z-index: 2;
-            padding: 4rem 0 0 0;
-        }
-
-        .hero::after {
-            content: '1';
-            position: absolute;
-            top: 10%;
-            left: 5%;
-            font-size: 6rem;
-            font-weight: 900;
-            color: #FFFFFF;
-            opacity: 0.15;
-            z-index: 1;
-            pointer-events: none;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(30, 58, 138, 0.9) 50%, rgba(59, 130, 246, 0.9) 100%);
-            z-index: 1;
-        }
-
-        /* 老虎機裝飾元素 */
-        .slot-machine-decoration {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            z-index: 1;
-            pointer-events: none;
-            overflow: hidden;
-        }
-
-        .slot-reel {
-            position: absolute;
-            width: 120px;
-            height: 200px;
-            background: linear-gradient(180deg, rgba(212, 175, 55, 0.1) 0%, rgba(20, 20, 35, 0.8) 100%);
-            border: 3px solid rgba(212, 175, 55, 0.5);
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 0 30px rgba(212, 175, 55, 0.3);
-        }
-
-        .slot-reel::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 33.33%;
-            background: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, transparent 100%);
-            z-index: 2;
-        }
-
-        .slot-reel::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 33.33%;
-            background: linear-gradient(0deg, rgba(255, 255, 255, 0.1) 0%, transparent 100%);
-            z-index: 2;
-        }
-
-        .slot-symbols {
-            position: absolute;
-            width: 100%;
-            height: 300%;
-            top: -100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: space-around;
-            animation: spinReel 3s linear infinite;
-        }
-
-        @keyframes spinReel {
-            0% { transform: translateY(0); }
-            100% { transform: translateY(33.33%); }
-        }
-
-        .slot-symbol {
-            font-size: 4rem;
-            line-height: 200px;
-            text-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
-            filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.6));
-        }
-
-        .slot-reel-1 {
-            top: 20%;
-            left: 10%;
-            animation: floatReel 6s ease-in-out infinite;
-        }
-
-        .slot-reel-2 {
-            top: 30%;
-            right: 15%;
-            animation: floatReel 8s ease-in-out infinite 1s;
-        }
-
-        .slot-reel-3 {
-            bottom: 20%;
-            left: 20%;
-            animation: floatReel 7s ease-in-out infinite 2s;
-        }
-
-        @keyframes floatReel {
-            0%, 100% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(5deg); }
-        }
-
-        /* 老虎機燈光效果 */
-        .slot-lights {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            z-index: 1;
-            pointer-events: none;
-        }
-
-        .light-bulb {
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(255, 215, 0, 0.8) 0%, rgba(212, 175, 55, 0.4) 100%);
-            box-shadow: 0 0 20px rgba(255, 215, 0, 0.8), 0 0 40px rgba(255, 215, 0, 0.4);
-            animation: blink 1.5s ease-in-out infinite;
-        }
-
-        @keyframes blink {
-            0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.3; transform: scale(0.8); }
-        }
-
-        .light-bulb:nth-child(1) { top: 15%; left: 10%; animation-delay: 0s; }
-        .light-bulb:nth-child(2) { top: 25%; right: 15%; animation-delay: 0.3s; }
-        .light-bulb:nth-child(3) { bottom: 25%; left: 15%; animation-delay: 0.6s; }
-        .light-bulb:nth-child(4) { top: 50%; left: 50%; animation-delay: 0.9s; }
-        .light-bulb:nth-child(5) { bottom: 15%; right: 10%; animation-delay: 1.2s; }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            width: 150%;
-            height: 150%;
-            background: radial-gradient(circle at 30% 50%, rgba(59, 130, 246, 0.2) 0%, transparent 50%);
-            animation: pulse 8s ease-in-out infinite;
-        }
-
-        .hero::after {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: 
-                radial-gradient(circle at 20% 30%, rgba(96, 165, 250, 0.15) 0%, transparent 40%),
-                radial-gradient(circle at 80% 70%, rgba(59, 130, 246, 0.15) 0%, transparent 40%);
-            animation: rotate 20s linear infinite;
-        }
-
-        @keyframes rotate {
+        @keyframes spin {
             from { transform: rotate(0deg); }
             to { transform: rotate(360deg); }
         }
 
-        @keyframes pulse {
-            0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.5; }
-            50% { transform: scale(1.1) rotate(5deg); opacity: 0.8; }
+        .nav-links {
+            display: flex;
+            gap: 3rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--soft-white);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+            position: relative;
+            text-transform: uppercase;
+        }
+
+        .nav-links a::before {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--gold);
+            transition: all 0.3s;
+            transform: translateX(-50%);
+        }
+
+        .nav-links a:hover::before {
+            width: 100%;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+            transform: translateY(-2px);
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            background: linear-gradient(135deg, var(--gold), var(--rose-gold));
+            border: 2px solid var(--gold);
+            padding: 0.5rem;
+            border-radius: 8px;
+        }
+
+        .menu-toggle span {
+            width: 30px;
+            height: 3px;
+            background: var(--midnight);
+            border-radius: 3px;
+            transition: 0.3s;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8rem 2rem 4rem;
+            z-index: 2;
+            overflow: hidden;
         }
 
         .hero-content {
+            max-width: 1400px;
             text-align: center;
-            z-index: 3;
-            max-width: 900px;
-            padding: 2rem;
-            animation: fadeInUp 1s ease-out;
             position: relative;
+            z-index: 3;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background: rgba(255, 215, 0, 0.1);
+            border: 2px solid var(--gold);
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 2rem;
+            animation: fadeInDown 1s ease-out;
+            text-transform: uppercase;
+            color: var(--gold);
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(3rem, 8vw, 7rem);
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, var(--soft-white) 0%, var(--gold) 50%, var(--rose-gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: fadeInUp 1s ease-out 0.2s both;
+            text-shadow: 0 0 80px rgba(255, 215, 0, 0.5);
+            letter-spacing: -2px;
         }
 
         @keyframes fadeInUp {
@@ -453,728 +305,512 @@
             }
         }
 
-        .hero h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 4.5rem;
-            font-weight: 900;
-            margin-bottom: 1.5rem;
-            background: linear-gradient(135deg, #60A5FA 0%, #3B82F6 50%, #FFFFFF 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            line-height: 1.2;
-            animation: fadeInUp 1s ease-out 0.2s both, titleShimmer 3s ease-in-out infinite;
-            position: relative;
-            filter: drop-shadow(0 0 20px rgba(96, 165, 250, 0.5));
-        }
-
-        @keyframes titleShimmer {
-            0%, 100% {
-                filter: drop-shadow(0 0 20px rgba(96, 165, 250, 0.5));
-            }
-            50% {
-                filter: drop-shadow(0 0 40px rgba(96, 165, 250, 0.9));
-            }
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 1.5rem;
-            justify-content: center;
-            margin-top: 2rem;
+        .hero-subtitle {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.3rem, 3vw, 2rem);
+            font-weight: 400;
+            color: rgba(253, 248, 243, 0.8);
+            margin-bottom: 3rem;
             animation: fadeInUp 1s ease-out 0.4s both;
+            font-style: italic;
+            letter-spacing: 1px;
         }
 
-        .btn {
-            padding: 1rem 2.5rem;
-            border: none;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: all 0.3s;
+        .cta-group {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 1s ease-out 0.6s both;
+        }
+
+        .cta-btn {
+            padding: 1.3rem 3rem;
+            font-size: 1.1rem;
+            font-weight: 700;
             text-decoration: none;
-            display: inline-block;
-        }
-
-        .btn-primary {
-            background: var(--sapphire-gradient);
-            color: #FFFFFF;
-            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.4), 0 0 20px rgba(96, 165, 250, 0.3);
+            border-radius: 50px;
+            transition: all 0.3s;
+            letter-spacing: 1px;
+            text-transform: uppercase;
             position: relative;
             overflow: hidden;
-            animation: buttonGlow 2s ease-in-out infinite;
         }
 
-        @keyframes buttonGlow {
-            0%, 100% {
-                box-shadow: 0 10px 30px rgba(59, 130, 246, 0.4), 0 0 20px rgba(96, 165, 250, 0.3);
-            }
-            50% {
-                box-shadow: 0 10px 40px rgba(59, 130, 246, 0.6), 0 0 40px rgba(96, 165, 250, 0.6);
-            }
+        .cta-primary {
+            background: linear-gradient(135deg, var(--gold), var(--rose-gold));
+            color: var(--midnight);
+            box-shadow: 0 10px 40px rgba(255, 215, 0, 0.4);
         }
 
-        .btn-primary::before {
+        .cta-primary::before {
             content: '';
             position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-            transform: rotate(45deg);
-            animation: buttonShine 2s infinite;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
         }
 
-        @keyframes buttonShine {
-            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
-            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        .cta-primary:hover::before {
+            width: 300px;
+            height: 300px;
         }
 
-        .btn-primary:hover {
+        .cta-primary:hover {
             transform: translateY(-3px);
-            box-shadow: 0 15px 50px rgba(59, 130, 246, 0.8), 0 0 50px rgba(96, 165, 250, 0.8);
+            box-shadow: 0 15px 50px rgba(255, 215, 0, 0.6);
         }
 
-        .btn-secondary {
-            background: rgba(59, 130, 246, 0.2);
-            color: #60A5FA;
-            border: 2px solid #3B82F6;
-            box-shadow: 0 5px 20px rgba(59, 130, 246, 0.2);
+        .cta-secondary {
+            background: rgba(255, 215, 0, 0.2);
+            color: var(--gold);
+            border: 2px solid var(--gold);
         }
 
-        .btn-secondary:hover {
-            background: var(--sapphire-gradient);
-            color: #FFFFFF;
+        .cta-secondary:hover {
+            background: var(--gold);
+            color: var(--midnight);
             transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.4);
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
         }
 
-        /* Casino Logos Section - 背景圖 1 (與Hero合併成一個區塊) */
-        .casino-logos {
-            padding: 0 2rem 4rem 2rem;
-            background: transparent;
-            position: relative;
-            z-index: 3;
-            margin-top: 0;
-        }
-
-        .casino-logos::after {
-            content: '2';
-            position: absolute;
-            bottom: 10%;
-            right: 5%;
-            font-size: 6rem;
-            font-weight: 900;
-            color: #FFFFFF;
-            opacity: 0.15;
-            z-index: 1;
-            pointer-events: none;
-        }
-
-        /* 老虎機背景裝飾 */
-        .slot-bg-decoration {
+        /* 浮動裝飾元素 */
+        .floating-shapes {
             position: absolute;
             width: 100%;
             height: 100%;
             top: 0;
             left: 0;
-            z-index: 1;
             pointer-events: none;
+            z-index: 1;
+        }
+
+        .shape {
+            position: absolute;
             opacity: 0.1;
+            animation: floatShape 20s ease-in-out infinite;
         }
 
-        .slot-icon {
-            position: absolute;
-            font-size: 3rem;
-            opacity: 0.3;
-            animation: slotFloat 8s ease-in-out infinite;
+        .shape-1 {
+            top: 15%;
+            left: 10%;
+            font-size: 6rem;
+            animation-delay: 0s;
         }
 
-        @keyframes slotFloat {
-            0%, 100% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-30px) rotate(180deg); }
+        .shape-2 {
+            top: 70%;
+            right: 15%;
+            font-size: 5rem;
+            animation-delay: 5s;
         }
 
-        .slot-icon:nth-child(1) { top: 10%; left: 5%; animation-delay: 0s; }
-        .slot-icon:nth-child(2) { top: 20%; right: 10%; animation-delay: 2s; }
-        .slot-icon:nth-child(3) { bottom: 20%; left: 8%; animation-delay: 4s; }
-        .slot-icon:nth-child(4) { bottom: 10%; right: 5%; animation-delay: 6s; }
-
-        .casino-logos::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                linear-gradient(180deg, transparent 0%, rgba(212, 175, 55, 0.05) 50%, transparent 100%),
-                radial-gradient(circle at 30% 50%, rgba(255, 215, 0, 0.1) 0%, transparent 50%);
-            pointer-events: none;
-            z-index: 1;
+        .shape-3 {
+            bottom: 20%;
+            left: 60%;
+            font-size: 7rem;
+            animation-delay: 10s;
         }
 
+        @keyframes floatShape {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            33% { transform: translate(30px, -30px) rotate(120deg); }
+            66% { transform: translate(-30px, 30px) rotate(240deg); }
+        }
+
+        /* Section 通用樣式 */
+        section {
+            position: relative;
+            padding: 6rem 2rem;
+            z-index: 2;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 4rem;
+        }
+
+        .section-label {
+            font-family: 'Cinzel', serif;
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--gold);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .section-title {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, var(--soft-white), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.2;
+        }
+
+        .section-description {
+            font-size: 1.2rem;
+            color: rgba(253, 248, 243, 0.7);
+            line-height: 1.8;
+        }
+
+        /* Casino Cards Grid */
         .casino-grid {
             max-width: 1400px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 1.5rem;
-            animation: fadeIn 1s ease-out;
-            position: relative;
-            z-index: 2;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
         }
 
         .casino-card {
-            background: linear-gradient(135deg, rgba(30, 58, 138, 0.9) 0%, rgba(37, 99, 235, 0.95) 100%);
-            border-radius: 15px;
-            padding: 1.5rem;
-            text-align: center;
-            transition: all 0.4s;
-            border: 2px solid rgba(96, 165, 250, 0.4);
-            cursor: pointer;
+            background: linear-gradient(135deg, rgba(107, 27, 154, 0.2), rgba(142, 43, 95, 0.2));
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            border-radius: 25px;
+            padding: 2.5rem;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             position: relative;
             overflow: hidden;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3), 0 0 30px rgba(96, 165, 250, 0.2);
         }
 
         .casino-card::before {
             content: '';
             position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-            transform: rotate(45deg);
-            animation: cardShine 3s infinite;
-        }
-
-        @keyframes cardShine {
-            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
-            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, transparent 0%, rgba(255, 215, 0, 0.1) 100%);
+            opacity: 0;
+            transition: opacity 0.4s;
         }
 
         .casino-card:hover {
-            transform: translateY(-10px) scale(1.05);
-            border-color: #60A5FA;
-            box-shadow: 0 20px 50px rgba(59, 130, 246, 0.5), 0 0 60px rgba(96, 165, 250, 0.6);
-            background: linear-gradient(135deg, rgba(37, 99, 235, 0.9) 0%, rgba(59, 130, 246, 0.95) 100%);
+            transform: translateY(-10px) scale(1.02);
+            border-color: var(--gold);
+            box-shadow: 0 20px 60px rgba(255, 215, 0, 0.3);
         }
 
-        .casino-card img {
-            width: 100%;
-            height: auto;
-            max-width: 150px;
-            object-fit: contain;
-            margin-bottom: 0.5rem;
-            border-radius: 10px;
-            background: rgba(255, 255, 255, 0.05);
-            padding: 0.5rem;
+        .casino-card:hover::before {
+            opacity: 1;
         }
 
-        /* Bonus Section - 背景圖 3 */
-        .bonus-section {
-            padding: 6rem 2rem;
-            position: relative;
-            background: url('https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=1920&q=80') center/cover;
-            background-attachment: fixed;
-            z-index: 2;
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
         }
 
-        .bonus-section::after {
-            content: '3';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 20rem;
-            font-weight: 900;
-            color: #FFFFFF;
-            opacity: 0.2;
-            z-index: 1;
-            pointer-events: none;
-        }
-
-        .bonus-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, rgba(15, 23, 42, 0.85) 0%, rgba(30, 58, 138, 0.85) 100%);
-            z-index: 1;
-        }
-
-        /* 獎金區老虎機特效 */
-        .bonus-slot-effect {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            z-index: 1;
-            pointer-events: none;
-        }
-
-        .spinning-symbol {
-            position: absolute;
-            font-size: 2.5rem;
-            opacity: 0.2;
-            animation: spinSymbol 4s linear infinite;
-        }
-
-        @keyframes spinSymbol {
-            0% { transform: rotate(0deg) scale(1); }
-            50% { transform: rotate(180deg) scale(1.2); }
-            100% { transform: rotate(360deg) scale(1); }
-        }
-
-        .bonus-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><rect fill="rgba(212,175,55,0.02)" width="1" height="1"/></svg>') repeat,
-                radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
-            opacity: 0.6;
-            z-index: 1;
-        }
-
-        .section-title {
-            font-family: 'Playfair Display', serif;
+        .casino-rank {
+            font-family: 'Cinzel', serif;
             font-size: 3rem;
             font-weight: 900;
-            text-align: center;
-            margin-bottom: 3rem;
-            background: var(--sapphire-gradient);
+            background: linear-gradient(135deg, var(--gold), var(--rose-gold));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            position: relative;
-            z-index: 3;
-            animation: titleShimmer 3s ease-in-out infinite;
-            filter: drop-shadow(0 0 15px rgba(96, 165, 250, 0.4));
+            line-height: 1;
         }
 
-        .bonus-list {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-            position: relative;
-            z-index: 3;
-        }
-
-        .bonus-section .section-title {
-            position: relative;
-            z-index: 3;
-        }
-
-        .bonus-item {
-            background: linear-gradient(135deg, rgba(30, 58, 138, 0.6) 0%, rgba(37, 99, 235, 0.8) 100%);
+        .casino-badge {
+            padding: 0.5rem 1rem;
+            background: rgba(255, 215, 0, 0.15);
+            border: 1px solid var(--gold);
             border-radius: 20px;
-            padding: 2rem;
-            border-left: 5px solid #60A5FA;
-            transition: all 0.3s;
-            animation: slideInLeft 0.6s ease-out both;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3), 0 0 15px rgba(96, 165, 250, 0.2);
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--gold);
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
 
-        .bonus-item::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            animation: bonusShine 3s infinite;
-        }
-
-        @keyframes bonusShine {
-            0% { left: -100%; }
-            100% { left: 100%; }
-        }
-
-        @keyframes slideInLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        .bonus-item:nth-child(1) { animation-delay: 0.1s; }
-        .bonus-item:nth-child(2) { animation-delay: 0.2s; }
-        .bonus-item:nth-child(3) { animation-delay: 0.3s; }
-        .bonus-item:nth-child(4) { animation-delay: 0.4s; }
-        .bonus-item:nth-child(5) { animation-delay: 0.5s; }
-        .bonus-item:nth-child(6) { animation-delay: 0.6s; }
-
-        .bonus-item:hover {
-            transform: translateX(10px) scale(1.02);
-            border-left-width: 8px;
-            box-shadow: 0 10px 40px rgba(59, 130, 246, 0.4), 0 0 30px rgba(96, 165, 250, 0.5);
-            background: linear-gradient(135deg, rgba(37, 99, 235, 0.7) 0%, rgba(59, 130, 246, 0.9) 100%);
-        }
-
-        .bonus-item h3 {
-            color: #60A5FA;
-            font-size: 1.3rem;
+        .casino-name {
+            font-family: 'Cinzel', serif;
+            font-size: 2rem;
+            font-weight: 700;
             margin-bottom: 1rem;
+            color: var(--soft-white);
+        }
+
+        .casino-description {
+            font-size: 1rem;
+            color: rgba(253, 248, 243, 0.7);
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+
+        .casino-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin-bottom: 2rem;
+        }
+
+        .feature-tag {
+            padding: 0.5rem 1rem;
+            background: rgba(255, 215, 0, 0.1);
+            border-radius: 15px;
+            font-size: 0.85rem;
+            color: var(--rose-gold);
             font-weight: 600;
         }
 
-        .bonus-item p {
-            color: rgba(248, 249, 250, 0.8);
-            line-height: 1.6;
+        .casino-link {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: linear-gradient(135deg, var(--gold), var(--rose-gold));
+            color: var(--midnight);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: all 0.3s;
+            box-shadow: 0 5px 20px rgba(255, 215, 0, 0.3);
         }
 
-        /* Banner Section */
-        .banner-grid {
-            max-width: 1400px;
-            margin: 4rem auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            padding: 0 2rem;
-            position: relative;
-            z-index: 2;
+        .casino-link:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 30px rgba(255, 215, 0, 0.5);
         }
 
-        .banner-card {
-            border-radius: 20px;
-            overflow: hidden;
-            position: relative;
-            transition: all 0.4s;
-            border: 3px solid rgba(59, 130, 246, 0.3);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-        }
-
-        .banner-card::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: left 0.5s;
-        }
-
-        .banner-card:hover::after {
-            left: 100%;
-        }
-
-        .banner-card:hover {
-            transform: scale(1.08);
-            border-color: #60A5FA;
-            box-shadow: 0 20px 50px rgba(59, 130, 246, 0.5);
-        }
-
-        .banner-card img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        /* Games Section - 背景圖 4 */
-        .games-section {
-            padding: 6rem 2rem;
-            background: url('https://images.unsplash.com/photo-1606889464198-fcb18894a52c?w=1920&q=80') center/cover;
-            background-attachment: fixed;
-            position: relative;
-            z-index: 2;
-        }
-
-        .games-section::after {
-            content: '4';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 20rem;
-            font-weight: 900;
-            color: #FFFFFF;
-            opacity: 0.2;
-            z-index: 1;
-            pointer-events: none;
-        }
-
-        .games-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(180deg, rgba(30, 58, 138, 0.85) 0%, rgba(37, 99, 235, 0.85) 100%);
-            z-index: 1;
-        }
-
+        /* Games Section */
         .games-grid {
             max-width: 1400px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
-            position: relative;
-            z-index: 2;
-        }
-
-        .games-section .section-title {
-            position: relative;
-            z-index: 3;
         }
 
         .game-card {
-            background: linear-gradient(135deg, rgba(30, 58, 138, 0.85) 0%, rgba(37, 99, 235, 0.9) 100%);
+            background: linear-gradient(135deg, rgba(107, 27, 154, 0.15), rgba(45, 10, 31, 0.3));
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 215, 0, 0.15);
             border-radius: 20px;
-            overflow: hidden;
+            padding: 2rem;
+            text-align: center;
             transition: all 0.4s;
-            border: 2px solid rgba(96, 165, 250, 0.3);
-            cursor: pointer;
             position: relative;
-            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3), 0 0 20px rgba(96, 165, 250, 0.2);
+            overflow: hidden;
         }
 
-        .game-card::before {
+        .game-card::after {
             content: '';
             position: absolute;
-            top: -50%;
-            left: -50%;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: radial-gradient(circle, rgba(255, 215, 0, 0.2), transparent);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: all 0.5s;
+        }
+
+        .game-card:hover::after {
             width: 200%;
             height: 200%;
-            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-            transform: rotate(45deg);
-            animation: cardShine 4s infinite;
         }
 
         .game-card:hover {
-            transform: translateY(-10px) scale(1.03);
-            border-color: #60A5FA;
-            box-shadow: 0 20px 60px rgba(59, 130, 246, 0.5), 0 0 50px rgba(96, 165, 250, 0.6);
-            background: linear-gradient(135deg, rgba(37, 99, 235, 0.9) 0%, rgba(59, 130, 246, 0.95) 100%);
+            transform: translateY(-10px) rotateZ(2deg);
+            border-color: var(--gold);
+            box-shadow: 0 15px 50px rgba(255, 215, 0, 0.25);
         }
 
-        .game-card img {
-            transition: transform 0.4s;
-        }
-
-        .game-card:hover img {
-            transform: scale(1.1);
-        }
-
-        .game-card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .game-info {
-            padding: 1.5rem;
-        }
-
-        .game-links {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-        }
-
-        .game-link {
-            color: #60A5FA;
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: all 0.3s;
-            padding: 0.5rem;
-            border-radius: 8px;
-            background: rgba(59, 130, 246, 0.1);
-        }
-
-        .game-link:hover {
-            background: rgba(59, 130, 246, 0.2);
-            padding-left: 1rem;
-        }
-
-        /* About Section - 背景圖 5 */
-        .about-section {
-            padding: 6rem 2rem;
-            background: url('https://images.unsplash.com/photo-1567427017947-545c5f8d16ad?w=1920&q=80') center/cover;
-            background-attachment: fixed;
-            position: relative;
-            z-index: 2;
-        }
-
-        .about-section::after {
-            content: '5';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 20rem;
-            font-weight: 900;
-            color: #FFFFFF;
-            opacity: 0.2;
-            z-index: 1;
-            pointer-events: none;
-        }
-
-        .about-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, rgba(37, 99, 235, 0.85) 0%, rgba(59, 130, 246, 0.85) 100%);
-            z-index: 1;
-        }
-
-        .about-content {
-            max-width: 1000px;
-            margin: 0 auto;
-            text-align: center;
-            position: relative;
-            z-index: 3;
-        }
-
-        .about-content h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            color: #60A5FA;
-            margin-bottom: 2rem;
-        }
-
-        .about-content p {
-            line-height: 1.8;
-            color: rgba(248, 249, 250, 0.85);
+        .game-icon {
+            font-size: 4rem;
             margin-bottom: 1.5rem;
-            text-align: left;
-        }
-
-        /* FAQ Section - 背景圖 6 */
-        .faq-section {
-            padding: 6rem 2rem;
-            background: url('https://images.unsplash.com/photo-1511192336575-5a79af67a629?w=1920&q=80') center/cover;
-            background-attachment: fixed;
+            display: block;
+            filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.4));
             position: relative;
-            z-index: 2;
-        }
-
-        .faq-section::after {
-            content: '6';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 20rem;
-            font-weight: 900;
-            color: #FFFFFF;
-            opacity: 0.2;
             z-index: 1;
-            pointer-events: none;
         }
 
-        .faq-section::before {
+        .game-name {
+            font-family: 'Cinzel', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+            color: var(--gold);
+            position: relative;
+            z-index: 1;
+        }
+
+        .game-description {
+            font-size: 0.95rem;
+            color: rgba(253, 248, 243, 0.7);
+            line-height: 1.6;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Bonus Section */
+        .bonus-section {
+            background: linear-gradient(135deg, rgba(107, 27, 154, 0.3), rgba(45, 10, 31, 0.5));
+            border-top: 1px solid rgba(255, 215, 0, 0.2);
+            border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+        }
+
+        .bonus-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .bonus-card {
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.05), rgba(232, 180, 168, 0.05));
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 215, 0, 0.3);
+            border-radius: 20px;
+            padding: 3rem 2.5rem;
+            text-align: center;
+            transition: all 0.4s;
+            position: relative;
+        }
+
+        .bonus-card::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, rgba(15, 23, 42, 0.85) 0%, rgba(30, 58, 138, 0.85) 100%);
-            z-index: 1;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(135deg, var(--gold), var(--rose-gold), var(--gold));
+            border-radius: 20px;
+            opacity: 0;
+            transition: opacity 0.4s;
+            z-index: -1;
         }
 
+        .bonus-card:hover::before {
+            opacity: 1;
+        }
+
+        .bonus-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 20px 60px rgba(255, 215, 0, 0.4);
+        }
+
+        .bonus-icon {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.5));
+        }
+
+        .bonus-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--gold);
+        }
+
+        .bonus-amount {
+            font-family: 'Cinzel', serif;
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--gold), var(--rose-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .bonus-description {
+            font-size: 1rem;
+            color: rgba(253, 248, 243, 0.7);
+            line-height: 1.7;
+        }
+
+        /* FAQ Section */
         .faq-container {
-            max-width: 1000px;
+            max-width: 900px;
             margin: 0 auto;
-            position: relative;
-            z-index: 3;
-        }
-
-        .faq-section .section-title {
-            position: relative;
-            z-index: 3;
         }
 
         .faq-item {
-            background: linear-gradient(135deg, rgba(30, 58, 138, 0.5) 0%, rgba(37, 99, 235, 0.7) 100%);
+            background: linear-gradient(135deg, rgba(107, 27, 154, 0.15), rgba(45, 10, 31, 0.2));
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 215, 0, 0.15);
             border-radius: 15px;
             margin-bottom: 1.5rem;
-            border: 1px solid rgba(96, 165, 250, 0.3);
             overflow: hidden;
             transition: all 0.3s;
         }
 
         .faq-item:hover {
-            border-color: #60A5FA;
+            border-color: var(--gold);
+            box-shadow: 0 5px 25px rgba(255, 215, 0, 0.2);
         }
 
         .faq-question {
-            padding: 1.5rem;
-            font-weight: 600;
-            color: #60A5FA;
+            font-family: 'Cinzel', serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            padding: 1.8rem 2rem;
             cursor: pointer;
-            font-size: 1.1rem;
+            color: var(--gold);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s;
+        }
+
+        .faq-question:hover {
+            background: rgba(255, 215, 0, 0.05);
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 2rem;
+            font-weight: 300;
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active .faq-question::after {
+            transform: rotate(45deg);
         }
 
         .faq-answer {
-            padding: 0 1.5rem 1.5rem;
-            color: rgba(248, 249, 250, 0.85);
+            padding: 0 2rem 1.8rem;
+            font-size: 1.05rem;
             line-height: 1.8;
+            color: rgba(253, 248, 243, 0.8);
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s, padding 0.3s;
         }
 
-        /* Footer - 背景圖 7 */
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding: 0 2rem 1.8rem;
+        }
+
+        /* Footer */
         footer {
-            background: url('https://images.unsplash.com/photo-1596838132731-3301c3fd4317?w=1920&q=80') center/cover;
+            background: linear-gradient(135deg, var(--midnight), var(--dark-wine));
+            border-top: 2px solid rgba(255, 215, 0, 0.3);
             padding: 4rem 2rem 2rem;
-            border-top: 1px solid rgba(96, 165, 250, 0.3);
             position: relative;
             z-index: 2;
-        }
-
-        footer::after {
-            content: '7';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 20rem;
-            font-weight: 900;
-            color: #FFFFFF;
-            opacity: 0.2;
-            z-index: 1;
-            pointer-events: none;
-        }
-
-        footer::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, rgba(30, 58, 138, 0.85) 0%, rgba(37, 99, 235, 0.85) 100%);
-            z-index: 1;
         }
 
         .footer-content {
@@ -1183,16 +819,15 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 3rem;
-            margin-bottom: 2rem;
-            position: relative;
-            z-index: 2;
+            margin-bottom: 3rem;
         }
 
         .footer-section h3 {
-            color: #60A5FA;
-            font-family: 'Playfair Display', serif;
+            font-family: 'Cinzel', serif;
             font-size: 1.5rem;
-            margin-bottom: 1rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--gold);
         }
 
         .footer-links {
@@ -1204,360 +839,359 @@
         }
 
         .footer-links a {
-            color: rgba(248, 249, 250, 0.7);
+            color: rgba(253, 248, 243, 0.7);
             text-decoration: none;
             transition: all 0.3s;
+            font-weight: 500;
         }
 
         .footer-links a:hover {
-            color: #60A5FA;
-            padding-left: 5px;
+            color: var(--gold);
+            transform: translateX(5px);
+            display: inline-block;
         }
 
         .copyright {
             text-align: center;
-            color: rgba(248, 249, 250, 0.5);
             padding-top: 2rem;
-            border-top: 1px solid rgba(96, 165, 250, 0.2);
+            border-top: 1px solid rgba(255, 215, 0, 0.2);
+            color: rgba(253, 248, 243, 0.5);
+            font-size: 0.9rem;
         }
 
         /* Responsive */
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: rgba(10, 2, 18, 0.98);
+                padding: 2rem;
+                gap: 1.5rem;
+            }
+
+            .nav-links.active {
+                display: flex;
             }
 
             .menu-toggle {
-                display: block;
+                display: flex;
             }
 
-            .hero h1 {
-                font-size: 2.5rem;
+            .hero {
+                padding: 6rem 1.5rem 3rem;
             }
 
-            .hero-buttons {
+            .cta-group {
                 flex-direction: column;
-                align-items: center;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
-
-            .casino-grid {
-                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
                 gap: 1rem;
             }
 
-            .games-grid {
+            .casino-grid,
+            .games-grid,
+            .bonus-grid {
                 grid-template-columns: 1fr;
             }
+
+            .section-title {
+                font-size: 2.5rem;
+            }
+        }
+
+        /* 光標軌跡效果 */
+        .cursor-trail {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--gold);
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0;
+            transition: opacity 0.3s;
+            box-shadow: 0 0 20px var(--gold);
         }
     </style>
 </head>
 <body>
-    <!-- 背景裝飾 -->
-    <div class="bg-pattern"></div>
-    <canvas id="particles-canvas"></canvas>
-    <div class="floating-coins" id="floating-coins"></div>
+    <!-- 背景層 -->
+    <div class="bg-grid"></div>
+    <div class="particle-layer">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+
     <!-- Navigation -->
     <nav>
         <div class="nav-container">
-            <div class="logo">Myanmar Casino 🎰</div>
+            <div class="logo">MYANMAR CASINO</div>
             <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#bonus">Free Bonus</a></li>
+                <li><a href="#casinos">Casinos</a></li>
                 <li><a href="#games">Games</a></li>
-                <li><a href="#articles">Articles</a></li>
-                <li><a href="#about">About Us</a></li>
+                <li><a href="#bonuses">Bonuses</a></li>
                 <li><a href="#faq">FAQ</a></li>
-                <li><a href="#contact">Contacts</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
-            <button class="menu-toggle">☰</button>
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
     </nav>
 
-    <!-- Hero Section + Casino Logos (合併成一個區塊) -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>မြန်မာ အွန်လိုင်း ကာစီနို</h1>
-            <div class="hero-buttons">
-                <a href="#bonus" class="btn btn-primary">ဖရီးဘောနက်စ် ရယူပါ 🎁</a>
-                <a href="#games" class="btn btn-secondary">🎰 အကောင်းဆုံးဆိုက်များ</a>
-            </div>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="floating-shapes">
+            <span class="shape shape-1">🎰</span>
+            <span class="shape shape-2">💎</span>
+            <span class="shape shape-3">🎲</span>
         </div>
         
-        <!-- 🔗 連結位置 1: Casino Logos 區塊 - 需要更換的賭場連結 -->
-        <div class="casino-logos">
-            <div class="casino-grid">
-            <!-- Myan99 連結 -->
-            <a href="https://www.myan99.me/m/home?affiliateCode=seom201" class="casino-card">
-                <img src="https://myancasino.com/assets/logo/MYAN99.webp" alt="Myan99 Casino">
-            </a>
-            <a href="https://www.myan88.me/m/home?affiliateCode=seom301" class="casino-card">
-                <img src="https://myancasino.com/assets/logo/MYAN88.webp" alt="Myan88 Casino">
-            </a>
-            <a href="https://www.b8my.net/m/home?affiliateCode=seom101" class="casino-card">
-                <img src="https://myancasino.com/assets/logo/B8MY.webp" alt="B8MY Casino">
-            </a>
-            <a href="https://www.yoma77.net/m/home?affiliateCode=seom401" class="casino-card">
-                <img src="https://myancasino.com/assets/logo/YOMA77.webp" alt="Yoma77 Casino">
-            </a>
-            <a href="https://www.myan98.co/m/home?affiliateCode=seom501" class="casino-card">
-                <img src="https://myancasino.com/assets/logo/MYAN98.webp" alt="Myan98 Casino">
-            </a>
-            <a href="https://www.bago888.net/m/home?affiliateCode=seom1701" class="casino-card">
-                <img src="https://myancasino.com/assets/logo/BAGO888.webp" alt="Bago888 Casino">
-            </a>
-        </div>
-        </div>
-    </section>
-
-    <!-- Bonus Section -->
-    <section id="bonus" class="bonus-section">
-        <h2 class="section-title">ဂိမ်းဘောနပ်စ်များ ရယူပါ!</h2>
-        <div class="bonus-list">
-            <div class="bonus-item">
-                <h3>🎁 Myan99 - စလော့ဂိမ်းချစ်သူများအတွက် သီးသန့်ဘောနပ်စ်လေးတွေလာပါပြီရှင့်!</h3>
-                <p>တစ်နေ့တာလောင်းကြေး 1,000,000 ပြည့်တာနဲ့ Coupon Code လေးရိုက်ထည့်ရုံဖြင့် 10,000 ကျပ်ရရှိမဲ့ Code လေးလာပါပြီ။</p>
-            </div>
-            <div class="bonus-item">
-                <h3>🎁 Myan88 - ၂၀၀၀ ကျပ်ရှိရုံနဲ့ Myan88 မှာရှယ်ပွါးလို့ရနေပြီနော်!</h3>
-                <p>မြန်မာနိုင်ငံရဲ့ အကောင်းဆုံး အလျော်အစားအမှန်ကန်ဆုံး အေးဂျင့်ကြီးဖြစ်တဲ့ Myan88 ဂိမ်းဆိုဒ်မှာဆိုရင် ရှမ်းကိုးမီး အသေးစားဂိမ်းနှင့် ငါးဂိမ်းများ, Slot မျိုးစုံနှင့် ကစားလို့ရပါတယ်နော်။</p>
-            </div>
-            <div class="bonus-item">
-                <h3>🎁 B8MY - အခန်းတိုင်းလိုလို JACKPOT ပေးနေတာ ဘယ်ဂိမ်းလဲလိုမမေးနဲ့!</h3>
-                <p>သေချာတာကတော့ B8MY ပဲလေနော် JACKPOTပေါက်ဖူးချင်တယ်ဆိုရင်တော့ B8MY ကိုသာရွေးချယ်လိုက်ပါ</p>
-            </div>
-            <div class="bonus-item">
-                <h3>🎁 Yoma77 ဂိမ်းလေးမှာ Telegram လေးရှိရုံဖြင့် စိတ်ကြိုက်ဆော့ကစားလို့ရနေပါပြီနော်!</h3>
-                <p>Download ဆွဲစရာမလို Website မလိုတဲ့အတွက် အခြားသူသိမှာဆိုးပြီး APP တွေဖျက်ရတဲ့အလုပ် သက်သာသွားလို့ အချိန်ကုန်လည်းသက်သာသွားမှာပါနော်</p>
-            </div>
-            <div class="bonus-item">
-                <h3>🎁 Myan98 - လူတိုင်းလူတိုင်းက အပြောင်းအလဲလေးရှိမှကြိုက်ကြတယ်မို့လား</h3>
-                <p>အခုလည်း စလော့ဂိမ်းကိုမှ ဂိမ်းဆိုဒ်လေးပြောင်းလဲဆော့နိုင်ဖိုအတွက် အခြားဂိမ်းဆိုဒ်လေးတွေနဲ့မိတ်ဆက်ပေးပါမယ်ရှင့်</p>
-            </div>
-            <div class="bonus-item">
-                <h3>🎁 Bago888 - ချစ်ကာကာတို ကိုယ်တိုင် အနည်းဆုံး သွင်းငွေ ၂၀၀၀ ကနေစပြီးကိုယ်တိုင်ငွေသွင်း</h3>
-                <p>Bago888 နဲ့လက်တွဲဖို ဖိတ်ခေါ်ပါတယ် အလိမ်အညာနာမည်ပျက်လုံးဝမရှိတာမို့ စိတ်ချလက်ချနဲ့ လာကစားဖိုဖိတ်ခေါ်ပါတယ်နော်!</p>
+        <div class="hero-content">
+            <span class="hero-badge">🏆 Premium Casino Experience</span>
+            <h1>မြန်မာ့ အကောင်းဆုံး<br>အွန်လိုင်းကာစီနို</h1>
+            <p class="hero-subtitle">ယုံကြည်စိတ်ချရသော၊ လုံခြုံမှုအပြည့်အစုံရှိသော၊ ကမ္ဘာ့အဆင့်မီ ကာစီနို အတွေ့အကြုံ</p>
+            <div class="cta-group">
+                <a href="#casinos" class="cta-btn cta-primary">စတင်ကစားရန်</a>
+                <a href="#bonuses" class="cta-btn cta-secondary">Bonus များကြည့်ရန်</a>
             </div>
         </div>
     </section>
 
-    <!-- Banner Grid -->
-    <!-- 🔗 連結位置 2: Banner Grid 區塊 - 需要更換的橫幅連結 -->
-    <div class="banner-grid">
-        <!-- Myan99 Banner 連結 -->
-        <a href="https://www.myan99.me/m/home?affiliateCode=seom201" class="banner-card">
-            <img src="https://myancasino.com/assets/image/FREE%20SPIN%20MYAN%2099.webp" alt="Myan99 Free Spins">
-        </a>
-        <a href="https://www.myan88.me/m/home?affiliateCode=seom301" class="banner-card">
-            <img src="https://myancasino.com/assets/image/WEEKLY%20BONUS%20MYAN88.webp" alt="Myan88 Weekly Bonus">
-        </a>
-        <a href="https://www.b8my.net/m/home?affiliateCode=seom101" class="banner-card">
-            <img src="https://myancasino.com/assets/image/GAME%20BONUS%20BAGO888.webp" alt="B8MY Game Bonus">
-        </a>
-        <a href="https://www.yoma77.net/m/home?affiliateCode=seom401" class="banner-card">
-            <img src="https://myancasino.com/assets/image/YOMA77%20GOLDEN%20EGG.webp" alt="Yoma77 Golden Egg">
-        </a>
-    </div>
+    <!-- Top Casinos Section -->
+    <section id="casinos">
+        <div class="section-header">
+            <span class="section-label">Featured Collection</span>
+            <h2 class="section-title">အကောင်းဆုံး ကာစီနိုများ</h2>
+            <p class="section-description">မြန်မာနိုင်ငံအတွက် အရည်အသွေးမြင့်ဆုံး၊ ယုံကြည်စိတ်ချရဆုံး အွန်လိုင်းကာစီနိုများကို ရွေးချယ်ထားပါသည်</p>
+        </div>
+
+        <div class="casino-grid">
+            <!-- Casino 1 -->
+            <div class="casino-card">
+                <div class="card-header">
+                    <div class="casino-rank">#1</div>
+                    <div class="casino-badge">TOP RATED</div>
+                </div>
+                <h3 class="casino-name">MyanBets</h3>
+                <p class="casino-description">မြန်မာနိုင်ငံ၏ နံပါတ်တစ် အွန်လိုင်းကာစီနို - အကောင်းဆုံး အတွေ့အကြုံနှင့် အမြင့်ဆုံး Bonus များ</p>
+                <div class="casino-features">
+                    <span class="feature-tag">200% Welcome Bonus</span>
+                    <span class="feature-tag">Live Casino</span>
+                    <span class="feature-tag">Fast Payout</span>
+                    <span class="feature-tag">24/7 Support</span>
+                </div>
+                <a href="https://myanbets.com" class="casino-link">စတင်ကစားမည်</a>
+            </div>
+
+            <!-- Casino 2 -->
+            <div class="casino-card">
+                <div class="card-header">
+                    <div class="casino-rank">#2</div>
+                    <div class="casino-badge">HOT</div>
+                </div>
+                <h3 class="casino-name">Myan99</h3>
+                <p class="casino-description">ကမ္ဘာ့အဆင့်မီ Slot ဂိမ်းများနှင့် မြန်မာဘာသာဖြင့် ပံ့ပိုးမှုအပြည့်အစုံ</p>
+                <div class="casino-features">
+                    <span class="feature-tag">150% Bonus</span>
+                    <span class="feature-tag">500+ Games</span>
+                    <span class="feature-tag">Mobile Friendly</span>
+                    <span class="feature-tag">Crypto Payment</span>
+                </div>
+                <a href="https://www.myan99.me/m/home?affiliateCode=seom201" class="casino-link">စတင်ကစားမည်</a>
+            </div>
+
+            <!-- Casino 3 -->
+            <div class="casino-card">
+                <div class="card-header">
+                    <div class="casino-rank">#3</div>
+                    <div class="casino-badge">NEW</div>
+                </div>
+                <h3 class="casino-name">Myan88</h3>
+                <p class="casino-description">အသစ်ဆုံး ကာစီနို ပလက်ဖောင်း - ခေတ်မီဆုံး ဂိမ်းများနှင့် အလွယ်ကူဆုံး ငွေသွင်းထုတ်ခြင်း</p>
+                <div class="casino-features">
+                    <span class="feature-tag">100% Welcome</span>
+                    <span class="feature-tag">Sports Betting</span>
+                    <span class="feature-tag">Instant Withdraw</span>
+                    <span class="feature-tag">VIP Program</span>
+                </div>
+                <a href="https://www.myan88.me/m/home?affiliateCode=seom301" class="casino-link">စတင်ကစားမည်</a>
+            </div>
+
+            <!-- Casino 4 -->
+            <div class="casino-card">
+                <div class="card-header">
+                    <div class="casino-rank">#4</div>
+                    <div class="casino-badge">POPULAR</div>
+                </div>
+                <h3 class="casino-name">B8MY</h3>
+                <p class="casino-description">လူကြိုက်အများဆုံး ကာစီနို - အကောင်းဆုံး Live Dealer ဂိမ်းများ</p>
+                <div class="casino-features">
+                    <span class="feature-tag">120% Bonus</span>
+                    <span class="feature-tag">Live Dealers</span>
+                    <span class="feature-tag">Myanmar Language</span>
+                    <span class="feature-tag">Secure Payment</span>
+                </div>
+                <a href="https://www.b8my.net/m/home?affiliateCode=seom101" class="casino-link">စတင်ကစားမည်</a>
+            </div>
+
+            <!-- Casino 5 -->
+            <div class="casino-card">
+                <div class="card-header">
+                    <div class="casino-rank">#5</div>
+                    <div class="casino-badge">TRUSTED</div>
+                </div>
+                <h3 class="casino-name">Yoma77</h3>
+                <p class="casino-description">ယုံကြည်စိတ်ချရဆုံး ကာစီနို - အမြင့်ဆုံး လုံခြုံမှုစနစ်</p>
+                <div class="casino-features">
+                    <span class="feature-tag">175% Welcome</span>
+                    <span class="feature-tag">High Stakes</span>
+                    <span class="feature-tag">Premium Games</span>
+                    <span class="feature-tag">Fast Support</span>
+                </div>
+                <a href="https://www.yoma77.net/m/home?affiliateCode=seom401" class="casino-link">စတင်ကစားမည်</a>
+            </div>
+
+            <!-- Casino 6 -->
+            <div class="casino-card">
+                <div class="card-header">
+                    <div class="casino-rank">#6</div>
+                    <div class="casino-badge">BONUS</div>
+                </div>
+                <h3 class="casino-name">Myan98</h3>
+                <p class="casino-description">အမြင့်ဆုံး Bonus များပေးသော ကာစီနို - နေ့စဉ် Promotion များ</p>
+                <div class="casino-features">
+                    <span class="feature-tag">250% Mega Bonus</span>
+                    <span class="feature-tag">Daily Rewards</span>
+                    <span class="feature-tag">Jackpot Games</span>
+                    <span class="feature-tag">Easy Deposit</span>
+                </div>
+                <a href="https://www.myan98.co/m/home?affiliateCode=seom501" class="casino-link">စတင်ကစားမည်</a>
+            </div>
+        </div>
+    </section>
 
     <!-- Games Section -->
-    <!-- 🔗 連結位置 3: Games Section 區塊 - 需要更換的遊戲連結 -->
-    <section id="games" class="games-section">
-        <h2 class="section-title">ရေပန်းအစားဆုံး ကာစီနိုနှင့် စလော့ဂိမ်းများ</h2>
+    <section id="games">
+        <div class="section-header">
+            <span class="section-label">Game Library</span>
+            <h2 class="section-title">လူကြိုက်များသော ဂိမ်းများ</h2>
+            <p class="section-description">ကမ္ဘာ့အဆင့်မီ ကာစီနိုဂိမ်းများ - အရည်အသွေးမြင့် ဂရပ်ဖစ်နှင့် ရင်လှုပ်ရှားဖွယ် အတွေ့အကြုံ</p>
+        </div>
+
         <div class="games-grid">
             <div class="game-card">
-                <!-- 🖼️ 圖片連結: Super Ace -->
-                <img src="https://myancasino.com/assets/image/super%20ace.webp" alt="Super Ace">
-                <div class="game-info">
-                    <div class="game-links">
-                        <!-- 遊戲連結 - 可批量替換 -->
-                        <a href="https://www.myan99.me/m/home?affiliateCode=seom201" class="game-link">Play in - Myan99</a>
-                        <a href="https://www.yoma77.net/m/home?affiliateCode=seom401" class="game-link">Play in - Yoma77</a>
-                        <a href="https://www.bago888.net/m/home?affiliateCode=seom1701" class="game-link">Play in - Bago888</a>
-                    </div>
-                </div>
+                <span class="game-icon">🎰</span>
+                <h3 class="game-name">Slot Games</h3>
+                <p class="game-description">ထောင်ပေါင်းများစွာသော စလော့ ဂိမ်းများ - အံ့သြဖွယ် Jackpot များ</p>
             </div>
 
             <div class="game-card">
-                <img src="https://myancasino.com/assets/image/aztec%20bank.webp" alt="Aztec Bank">
-                <div class="game-info">
-                    <div class="game-links">
-                        <a href="https://www.myan98.co/m/home?affiliateCode=seom501" class="game-link">Play in - Myan98</a>
-                        <a href="https://www.b8my.net/m/home?affiliateCode=seom101" class="game-link">Play in - B8MY</a>
-                        <a href="https://www.bago888.net/m/home?affiliateCode=seom1701" class="game-link">Play in - Bago888</a>
-                    </div>
-                </div>
+                <span class="game-icon">🃏</span>
+                <h3 class="game-name">Live Casino</h3>
+                <p class="game-description">တကယ့် Dealer များနှင့် တိုက်ရိုက်ကစား - အစစ်အမှန် Casino အတွေ့အကြုံ</p>
             </div>
 
             <div class="game-card">
-                <img src="https://myancasino.com/assets/image/golden%20empire.webp" alt="Golden Empire">
-                <div class="game-info">
-                    <div class="game-links">
-                        <a href="https://www.yoma77.net/m/home?affiliateCode=seom401" class="game-link">Play in - Yoma77</a>
-                        <a href="https://www.myan99.me/m/home?affiliateCode=seom201" class="game-link">Play in - Myan99</a>
-                        <a href="https://www.b8my.net/m/home?affiliateCode=seom101" class="game-link">Play in - B8MY</a>
-                    </div>
-                </div>
+                <span class="game-icon">🎲</span>
+                <h3 class="game-name">Table Games</h3>
+                <p class="game-description">ရိုးရာ ကာစီနို ဂိမ်းများ - Roulette, Blackjack, Baccarat</p>
             </div>
 
             <div class="game-card">
-                <img src="https://myancasino.com/assets/image/olympus%20gate.png" alt="Olympus Gate">
-                <div class="game-info">
-                    <div class="game-links">
-                        <a href="https://www.bago888.net/m/home?affiliateCode=seom1701" class="game-link">Play in - Bago888</a>
-                        <a href="https://www.yoma77.net/m/home?affiliateCode=seom401" class="game-link">Play in - Yoma77</a>
-                        <a href="https://www.b8my.net/m/home?affiliateCode=seom101" class="game-link">Play in - B8MY</a>
-                    </div>
-                </div>
+                <span class="game-icon">🎯</span>
+                <h3 class="game-name">Sports Betting</h3>
+                <p class="game-description">အားကစား လောင်းကစား - ကမ္ဘာတစ်ဝှမ်းရှိ ပွဲစဉ်များ</p>
             </div>
 
             <div class="game-card">
-                <img src="https://myancasino.com/assets/image/777.webp" alt="777">
-                <div class="game-info">
-                    <div class="game-links">
-                        <a href="https://www.myan99.me/m/home?affiliateCode=seom201" class="game-link">Play in - Myan99</a>
-                        <a href="https://www.b8my.net/m/home?affiliateCode=seom101" class="game-link">Play in - B8MY</a>
-                        <a href="https://www.bago888.net/m/home?affiliateCode=seom1701" class="game-link">Play in - Bago888</a>
-                    </div>
-                </div>
+                <span class="game-icon">💎</span>
+                <h3 class="game-name">Jackpot Slots</h3>
+                <p class="game-description">Progressive Jackpot ဂိမ်းများ - သန်းနှင့်ချီသော ဆုကြေး</p>
             </div>
 
             <div class="game-card">
-                <img src="https://myancasino.com/assets/image/charge%20buffalo.webp" alt="Charge Buffalo">
-                <div class="game-info">
-                    <div class="game-links">
-                        <a href="https://www.myan88.me/m/home?affiliateCode=seom301" class="game-link">Play in - Myan88</a>
-                        <a href="https://www.yoma77.net/m/home?affiliateCode=seom401" class="game-link">Play in - Yoma77</a>
-                        <a href="https://www.b8my.net/m/home?affiliateCode=seom101" class="game-link">Play in - B8MY</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="game-card">
-                <img src="https://myancasino.com/assets/image/boxing%20king.webp" alt="Boxing King">
-                <div class="game-info">
-                    <div class="game-links">
-                        <a href="https://www.myan88.me/m/home?affiliateCode=seom301" class="game-link">Play in - Myan88</a>
-                        <a href="https://www.yoma77.net/m/home?affiliateCode=seom401" class="game-link">Play in - Yoma77</a>
-                        <a href="https://www.b8my.net/m/home?affiliateCode=seom101" class="game-link">Play in - B8MY</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="game-card">
-                <img src="https://myancasino.com/assets/image/money%20coming.webp" alt="Money Coming">
-                <div class="game-info">
-                    <div class="game-links">
-                        <a href="https://www.myan88.me/m/home?affiliateCode=seom301" class="game-link">Play in - Myan88</a>
-                        <a href="https://www.yoma77.net/m/home?affiliateCode=seom401" class="game-link">Play in - Yoma77</a>
-                        <a href="https://www.b8my.net/m/home?affiliateCode=seom101" class="game-link">Play in - B8MY</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="game-card">
-                <img src="https://myancasino.com/assets/image/treasure.webp" alt="Crazy Treasure">
-                <div class="game-info">
-                    <div class="game-links">
-                        <a href="https://www.myan88.me/m/home?affiliateCode=seom301" class="game-link">Play in - Myan88</a>
-                        <a href="https://www.yoma77.net/m/home?affiliateCode=seom401" class="game-link">Play in - Yoma77</a>
-                        <a href="https://www.b8my.net/m/home?affiliateCode=seom101" class="game-link">Play in - B8MY</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="game-card">
-                <img src="https://myancasino.com/assets/image/golden%20temple.webp" alt="Golden Temple">
-                <div class="game-info">
-                    <div class="game-links">
-                        <a href="https://www.myan98.co/m/home?affiliateCode=seom501" class="game-link">Play in - Myan98</a>
-                        <a href="https://www.yoma77.net/m/home?affiliateCode=seom401" class="game-link">Play in - Yoma77</a>
-                        <a href="https://www.b8my.net/m/home?affiliateCode=seom101" class="game-link">Play in - B8MY</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="game-card">
-                <img src="https://myancasino.com/assets/image/jackpot%20joker.webp" alt="Jackpot Joker">
-                <div class="game-info">
-                    <div class="game-links">
-                        <a href="https://www.myan98.co/m/home?affiliateCode=seom501" class="game-link">Play in - Myan98</a>
-                        <a href="https://www.yoma77.net/m/home?affiliateCode=seom401" class="game-link">Play in - Yoma77</a>
-                        <a href="https://www.b8my.net/m/home?affiliateCode=seom101" class="game-link">Play in - B8MY</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="game-card">
-                <img src="https://myancasino.com/assets/image/chin%20shi%20huang.webp" alt="Chin Shi Huang">
-                <div class="game-info">
-                    <div class="game-links">
-                        <a href="https://www.myan99.me/m/home?affiliateCode=seom201" class="game-link">Play in - Myan99</a>
-                        <a href="https://www.yoma77.net/m/home?affiliateCode=seom401" class="game-link">Play in - Yoma77</a>
-                        <a href="https://www.bago888.net/m/home?affiliateCode=seom1701" class="game-link">Play in - Bago888</a>
-                    </div>
-                </div>
+                <span class="game-icon">🎪</span>
+                <h3 class="game-name">Game Shows</h3>
+                <p class="game-description">တီဗီ Show ပုံစံ ဂိမ်းများ - ပျော်ရွှင်ဖွယ် အတွေ့အကြုံ</p>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="about-section">
-        <div class="about-content">
-            <h2>About our Myanmar Casino & Game Group</h2>
-            <h3 style="color: var(--primary); font-size: 1.8rem; margin-bottom: 2rem;">Myanmar Casino</h3>
-            <p>မြန်မာ အွန်လိုင်းကာစီနို သည် မြန်မာနိုင်ငံ၏ အကြီးဆုံးနှင့် ယုံကြည်စိတ်ချရဆုံး အွန်လိုင်း ကာစီနို (Casino) နှင့် စလော့ဂိမ်း (Slot Game) အဖွဲ့အစည်းအဖြစ် ဦးဆောင်နေပါသည်။ နိုင်ငံတဝှမ်းရှိ အွန်လိုင်းဂိမ်းကစားသူ မီလီယံချီ ကစားသမားတို့၏ ပထမဆုံးရွေးချယ်မှုဖြစ်လာခဲ့ပါသည်။</p>
-            <p>ကျွန်ုပ်တို့သည် ယုံကြည်စိတ်ချရမှု၊ တိကျမှန်ကန်သော သတင်းအချက်အလက်နှင့် ဘေးကင်းလုံခြုံသော ဂိမ်းကစားခြင်းအတွေ့အကြုံကို ပေးအပ်ရန် ကတိပြုပါသည်။</p>
-            <p>ဂိမ်းသတင်းများသာမက Myan99၊ Yoma77 နှင့် Bago888 ကဲ့သို့ နိုင်ငံတကာအဆင့်မီ ဂိမ်းပလက်ဖောင်းများနှင့် ပူးပေါင်း၍ အကောင်းဆုံး အွန်လိုင်းဂိမ်းအတွေ့အကြုံကို ပေးစွမ်းပါသည်။</p>
-            <p>နေ့စဉ်ဂိမ်းအပ်ဒိတ်များ၊ သီးသန့်ပရိုမိုးရှင်းများနှင့် လုံခြုံစိတ်ချရသော ပလက်ဖောင်းကြောင့် မြန်မာ အွန်လိုင်းဂိမ်း ဂရုသည် နိုင်ငံအနှံ့ဂိမ်းကစားသူများအတွက် ယုံကြည်စိတ်ချရမှု၏ အမှတ်အသားအဖြစ် ရပ်တည်နေပါသည်။</p>
-            <p>ဘေးကင်းလုံခြုံပြီး ခေတ်မီသော ဘောနပ်စ်များစွာပါဝင်သည့် ဂိမ်းအတွေ့အကြုံအတွက် ယနေ့ပင် မြန်မာ အွန်လိုင်းဂိမ်း ဂရုနှင့် ချိတ်ဆက်ပြီး အနိုင်ယူလိုက်ပါ။</p>
+    <!-- Bonuses Section -->
+    <section id="bonuses" class="bonus-section">
+        <div class="section-header">
+            <span class="section-label">Exclusive Offers</span>
+            <h2 class="section-title">အထူး Bonus များ</h2>
+            <p class="section-description">မြန်မာကစားသမားများအတွက် အထူးပြင်ဆင်ထားသော Bonus နှင့် Promotion များ</p>
+        </div>
+
+        <div class="bonus-grid">
+            <div class="bonus-card">
+                <span class="bonus-icon">🎁</span>
+                <h3 class="bonus-title">Welcome Bonus</h3>
+                <div class="bonus-amount">250%</div>
+                <p class="bonus-description">ပထမဆုံး ငွေသွင်းသည့်အခါ အများဆုံး 250% အထိ Bonus ရယူပါ</p>
+            </div>
+
+            <div class="bonus-card">
+                <span class="bonus-icon">💰</span>
+                <h3 class="bonus-title">Daily Cashback</h3>
+                <div class="bonus-amount">15%</div>
+                <p class="bonus-description">နေ့စဉ် သင့်ဆုံးရှုံးမှု၏ 15% ကို ပြန်လည်ရယူပါ</p>
+            </div>
+
+            <div class="bonus-card">
+                <span class="bonus-icon">🏆</span>
+                <h3 class="bonus-title">VIP Rewards</h3>
+                <div class="bonus-amount">∞</div>
+                <p class="bonus-description">VIP အဖွဲ့ဝင်များအတွက် အကန့်အသတ်မရှိ အခွင့်အလမ်းများ</p>
+            </div>
         </div>
     </section>
 
     <!-- FAQ Section -->
-    <section id="faq" class="faq-section">
-        <h2 class="section-title">အမေးများသော မေးခွန်းများ (FAQ)</h2>
+    <section id="faq">
+        <div class="section-header">
+            <span class="section-label">Help Center</span>
+            <h2 class="section-title">မေးလေ့ရှိသော မေးခွန်းများ</h2>
+            <p class="section-description">အွန်လိုင်းကာစီနို အကြောင်း သိလိုသမျှ အချက်အလက်များ</p>
+        </div>
+
         <div class="faq-container">
             <div class="faq-item">
-                <div class="faq-question">အွန်လိုင်းကာစီနိုအကောင့်ကို ဘယ်လို ဖွင့်ရမလဲ?</div>
-                <div class="faq-answer">"Sign Up" ကို နှိပ်ပြီး ဖုန်းနံပါတ် နှင့် နာမည် အချက်အလက်များ ဖြည့်ပါ။ ဖုန်းနံပါတ် နဲ့ အကောင့်ဖွင့်ပါ — ဒါမှမဟုတ် Google / Telegram တို့ဖြင့်လဲ လျင်မြန်စွာ အကောင့်ဖွင့်နိုင်သည်။</div>
+                <div class="faq-question">အွန်လိုင်းကာစီနို လုံခြုံမှု ရှိပါသလား?</div>
+                <div class="faq-answer">ကျွန်တော်တို့ ရွေးချယ်ထားသော ကာစီနိုများအားလုံးသည် နိုင်ငံတကာလိုင်စင်ရ၊ SSL Encryption နည်းပညာဖြင့် လုံခြုံမှုအပြည့်အစုံရှိပါသည်။</div>
             </div>
 
             <div class="faq-item">
-                <div class="faq-question">အကောင့်ထဲကို ငွေဘယ်လိုဖြည့်ရမလဲ ? / Deposit ဘယ်လိုလုပ်ရလဲ?</div>
-                <div class="faq-answer">"Wallet / Cashier" သို့ သွားပါ၊ ကြိုက်နှစ်သက်သော ငွေပေးချေမှု အမျိုးအစား ကိုရွေးပါ၊ ဖြည့်လိုသော ငွေပမာဏ ကို ထည့်သွင်းပြီး ငွေလွှဲပါ။ ငွေဖြည့်သွင်းခြင်းသည် အလွန်မြန်ဆန်ပြီး ချက်ချင်းရပါသည်။</div>
+                <div class="faq-question">ငွေသွင်း/ငွေထုတ် ဘယ်လိုလုပ်ရမလဲ?</div>
+                <div class="faq-answer">KBZPay, WavePay, ဘဏ်လွှဲ၊ နှင့် Cryptocurrency အပါအဝင် မြန်မာနိုင်ငံတွင် အသုံးများသော ငွေပေးချေမှုနည်းလမ်းအားလုံးကို ပံ့ပိုးပေးပါသည်။</div>
             </div>
 
             <div class="faq-item">
-                <div class="faq-question">အခုမှစဆော့ မည့်သူများအတွက် ကာစီနို ဘောနက်စ် (Bonus) များ ရနိုင်သလား?</div>
-                <div class="faq-answer">အခုမှစဆော့မည့် သူများသည် ပထမဆုံး ငွေဖြည့်သွင်းခြင်း (Deposit) ပြုလုပ်ပြီးနောက် Welcome Bonus ကို ရယူနိုင်သည်။</div>
+                <div class="faq-question">Welcome Bonus ကို ဘယ်လို ရယူရမလဲ?</div>
+                <div class="faq-answer">အကောင့်ဖွင့်ပြီး ပထမဆုံး ငွေသွင်းလိုက်သည်နှင့် အလိုအလျောက် Welcome Bonus ရရှိမည်ဖြစ်သည်။</div>
             </div>
 
             <div class="faq-item">
-                <div class="faq-question">မိုဘိုင်းဖုန်းပေါ်မှာ ကာစီနို ဂိမ်းများ ကစားနိုင်သလား?</div>
-                <div class="faq-answer">iOS / Android စမတ်ဖုန်းများတွင် Slots, Live Casino ဂိမ်းများကို မိုဘိုင်းဖုန်း မှ တိုက်ရိုက်ကစားနိုင်သည်၊ App သွင်းရန် မလိုပါ။</div>
+                <div class="faq-question">မိုဘိုင်းဖုန်းဖြင့် ကစားနိုင်ပါသလား?</div>
+                <div class="faq-answer">iOS နှင့် Android စမတ်ဖုန်းများတွင် App သွင်းစရာမလိုဘဲ Browser မှတဆင့် တိုက်ရိုက်ကစားနိုင်ပါသည်။</div>
             </div>
 
             <div class="faq-item">
-                <div class="faq-question">ဘယ်လိုစလော့, ကာစီနို ဂိမ်းများကို ကစားနိုင်သလဲ?</div>
-                <div class="faq-answer">ရေပန်းစားသော စ‌လော့ ဂိမ်းများ, Roulette, Blackjack, Live Dealer ဂိမ်းများ ရရှိနိုင်သည်။</div>
+                <div class="faq-question">အနိမ့်ဆုံး ငွေသွင်းပမာဏ ဘယ်လောက်လဲ?</div>
+                <div class="faq-answer">အများစုသော ကာစီနိုများတွင် အနိမ့်ဆုံး ၃,၀၀၀ ကျပ် မှ ၅,၀၀၀ ကျပ် အထိသာ ငွေသွင်းရပါသည်။</div>
             </div>
 
             <div class="faq-item">
-                <div class="faq-question">ကာစီနို ကစာခြင်းမှ အနိုင်ရရှိသော ‌ငွေများကို ဘယ်လို ထုတ်ယူမလဲ?</div>
-                <div class="faq-answer">"Wallet / Cashier" ကိုဖွင့်ပြီး "Withdraw" ကိုရွေးပါ၊ ထုတ်ယူလိုသော ငွေပေးချေမှု ပလက်ဖောင်း ကို ရွေးပြီး ထုတ်ယူပါ။ ငွေထုတ်ယူမှုများ သည် ၁ ရက်မှ ၃ ရက်အထိ ကြာနိုင်သည်။</div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question">အွန်လိုင်းကာစီနို ဆော့ကစားရန် အနည်းဆုံးငွေဘယ်လောက် ဖြည့်ရမလဲ?</div>
-                <div class="faq-answer">မြန်မာနိုင်ငံရှိ အွန်လိုင်းကာစီနိုများတွင် KBZPay၊ WavePay စတဲ့ e-wallet များ၊ ဘဏ်မှငွေလွှဲခြင်း နှင့် တချို့သော ကာစီနိုများမှာ Crypto ငွေပေးချေမှု တွေကိုသုံးပြီး ငွေဖြည့်လို့လဲရပါတယ်။ အနည်းဆုံးငွေသွင်းပမာဏကတော့ ၃,၀၀၀ ကျပ် မှ ၅,၀၀၀ ကျပ် အထိ ရှိနိုင်ပါတယ်။</div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question">မြန်မာနိုင်ငံအတွက် အွန်လိုင်းကာစီနိုများတွင် ငွေထုတ်ကြာချိန် နှင့် တစ်ခါလျင် အများဆုံး ထုတ်နိုင်သောပမာဏက ဘယ်လောက်လဲ?</div>
-                <div class="faq-answer">မြန်မာနိုင်ငံရှိ အွန်လိုင်းကာစီနိုများတွင် KBZPay၊ WavePay၊ ဘဏ်အကောင့်နှင့် ငွေထုတ်ခြင်း ဖြင့် ငွေထုတ်နိုင်ပါတယ်။ အနည်းဆုံးငွေထုတ်ပမာဏက ၁၀,၀၀၀ ကျပ် မှ ၂၀,၀၀၀ ကျပ် အထိ ဖြစ်နိုင်ပါတယ်။ ပုံမှန်အားဖြင့် ငွေထုတ်ရန်အတည်ပြုချိန်က ၁ ရက်မှ ၃ ရက်အတွင်း ကြာနိုင်ပါတယ်။</div>
+                <div class="faq-question">ငွေထုတ် အတည်ပြုချိန် ဘယ်လောက်ကြာမလဲ?</div>
+                <div class="faq-answer">ငွေပေးချေမှု နည်းလမ်းပေါ်မူတည်၍ ၁ ရက်မှ ၃ ရက်အတွင်း ငွေလက်ခံရရှိပါမည်။</div>
             </div>
         </div>
     </section>
@@ -1566,20 +1200,16 @@
     <footer id="contact">
         <div class="footer-content">
             <div class="footer-section">
-                <h3>MYANMAR CASINO GROUP</h3>
-                <p style="color: rgba(248, 249, 250, 0.7); line-height: 1.8;">
-                    မြန်မာနိုင်ငံအတွက် ယုံကြည်စိတ်ချရတဲ့ အွန်လိုင်းကာစီနိုဆိုဒ်များအကြောင်း
-                    အသေးစိတ်ဖတ်ရှုလိုပါက
+                <h3>MYANMAR CASINO</h3>
+                <p style="color: rgba(253, 248, 243, 0.7); line-height: 1.8;">
+                    မြန်မာနိုင်ငံအတွက် ယုံကြည်စိတ်ချရတဲ့ အွန်လိုင်းကာစီနို အချက်အလက်များ ပေးဆောင်နေသော Platform
                 </p>
             </div>
             <div class="footer-section">
-                <h3>Our Links</h3>
-                <!-- 🔗 連結位置 4: Footer 區塊 - 需要更換的頁尾連結 -->
+                <h3>Quick Links</h3>
                 <ul class="footer-links">
-                    <li><a href="/best-online-casino-sites-myanmar">Top 10 Myanmar Casinos</a></li>
-                    <!-- MyanBets 連結 -->
+                    <li><a href="/best-online-casino-sites-myanmar">Top 10 Casinos</a></li>
                     <li><a href="https://myanbets.com">MyanBets</a></li>
-                    <!-- 賭場連結 - 可批量替換 -->
                     <li><a href="https://www.myan99.me/m/home?affiliateCode=seom201">Myan99</a></li>
                     <li><a href="https://www.myan88.me/m/home?affiliateCode=seom301">Myan88</a></li>
                     <li><a href="https://www.b8my.net/m/home?affiliateCode=seom101">B8MY</a></li>
@@ -1589,31 +1219,27 @@
                 </ul>
             </div>
             <div class="footer-section">
-                <h3>Any questions?</h3>
-                <!-- 🔗 連結位置 5: Email 連結 -->
-                <p style="color: #60A5FA; margin-bottom: 1rem;">
-                    <a href="mailto:myanmar@contact.com" style="color: #60A5FA; text-decoration: none;">myanmar@contact.com</a>
+                <h3>Contact Us</h3>
+                <p style="color: rgba(253, 248, 243, 0.7); margin-bottom: 1rem;">
+                    <a href="mailto:myanmar@contact.com" style="color: var(--gold); text-decoration: none;">myanmar@contact.com</a>
                 </p>
-                <h3 style="margin-top: 2rem;">Our Location</h3>
-                <p style="color: rgba(248, 249, 250, 0.7);">Yangon, Myanmar</p>
+                <h3 style="margin-top: 2rem;">Location</h3>
+                <p style="color: rgba(253, 248, 243, 0.7);">Yangon, Myanmar</p>
             </div>
         </div>
         <div class="copyright">
-            Copyright © 2025 | Terms & Conditions | Privacy Policy | Feedback
+            Copyright © 2025 Myanmar Casino | Terms & Conditions | Privacy Policy | Responsible Gaming
         </div>
     </footer>
 
     <script>
-        // Smooth scrolling for anchor links
+        // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
             });
         });
@@ -1623,24 +1249,33 @@
         const navLinks = document.querySelector('.nav-links');
 
         menuToggle.addEventListener('click', () => {
-            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+            navLinks.classList.toggle('active');
         });
 
-        // Add scroll effect to navigation
-        let lastScroll = 0;
+        // Scroll effects
         window.addEventListener('scroll', () => {
             const nav = document.querySelector('nav');
-            const currentScroll = window.pageYOffset;
-
-            if (currentScroll > 100) {
-                nav.style.background = 'rgba(15, 15, 30, 0.98)';
-                nav.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.3)';
+            if (window.pageYOffset > 100) {
+                nav.style.background = 'rgba(10, 2, 18, 0.98)';
             } else {
-                nav.style.background = 'rgba(15, 15, 30, 0.95)';
-                nav.style.boxShadow = 'none';
+                nav.style.background = 'rgba(10, 2, 18, 0.85)';
             }
+        });
 
-            lastScroll = currentScroll;
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                const wasActive = item.classList.contains('active');
+                
+                document.querySelectorAll('.faq-item').forEach(faq => {
+                    faq.classList.remove('active');
+                });
+                
+                if (!wasActive) {
+                    item.classList.add('active');
+                }
+            });
         });
 
         // Intersection Observer for animations
@@ -1658,98 +1293,70 @@
             });
         }, observerOptions);
 
-        document.querySelectorAll('.game-card, .bonus-item, .casino-card').forEach((el) => {
+        document.querySelectorAll('.casino-card, .game-card, .bonus-card').forEach((el) => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(30px)';
-            el.style.transition = 'all 0.6s ease-out';
+            el.style.transition = 'all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
             observer.observe(el);
         });
 
-        // 粒子效果
-        const canvas = document.getElementById('particles-canvas');
-        const ctx = canvas.getContext('2d');
-        
-        function resizeCanvas() {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-        }
-        resizeCanvas();
-        window.addEventListener('resize', resizeCanvas);
+        // Cursor trail effect
+        let cursorTrails = [];
+        const maxTrails = 10;
 
-        const particles = [];
-        const particleCount = 50;
-
-        class Particle {
-            constructor() {
-                this.x = Math.random() * canvas.width;
-                this.y = Math.random() * canvas.height;
-                this.size = Math.random() * 3 + 1;
-                this.speedX = Math.random() * 0.5 - 0.25;
-                this.speedY = Math.random() * 0.5 - 0.25;
-                this.opacity = Math.random() * 0.5 + 0.2;
-            }
-
-            update() {
-                this.x += this.speedX;
-                this.y += this.speedY;
-
-                if (this.x > canvas.width) this.x = 0;
-                if (this.x < 0) this.x = canvas.width;
-                if (this.y > canvas.height) this.y = 0;
-                if (this.y < 0) this.y = canvas.height;
-            }
-
-            draw() {
-                ctx.fillStyle = `rgba(96, 165, 250, ${this.opacity})`;
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                ctx.fill();
+        document.addEventListener('mousemove', (e) => {
+            if (window.innerWidth > 768) {
+                const trail = document.createElement('div');
+                trail.className = 'cursor-trail';
+                trail.style.left = e.clientX + 'px';
+                trail.style.top = e.clientY + 'px';
+                trail.style.opacity = '0.6';
+                document.body.appendChild(trail);
                 
-                // 添加光暈效果
-                ctx.shadowBlur = 15;
-                ctx.shadowColor = 'rgba(96, 165, 250, 0.8)';
-                ctx.fill();
-                ctx.shadowBlur = 0;
+                cursorTrails.push(trail);
+                
+                if (cursorTrails.length > maxTrails) {
+                    const oldTrail = cursorTrails.shift();
+                    oldTrail.remove();
+                }
+                
+                setTimeout(() => {
+                    trail.style.opacity = '0';
+                    trail.style.transform = 'scale(2)';
+                    setTimeout(() => trail.remove(), 300);
+                }, 100);
             }
-        }
+        });
 
-        for (let i = 0; i < particleCount; i++) {
-            particles.push(new Particle());
-        }
-
-        function animateParticles() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            particles.forEach(particle => {
-                particle.update();
-                particle.draw();
+        // Card hover 3D effect
+        document.querySelectorAll('.casino-card, .game-card, .bonus-card').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                
+                const rotateX = (y - centerY) / 10;
+                const rotateY = (centerX - x) / 10;
+                
+                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-10px) scale(1.02)`;
             });
-            requestAnimationFrame(animateParticles);
-        }
-        animateParticles();
-
-        // 浮動金幣效果
-        const coinsContainer = document.getElementById('floating-coins');
-        const coinEmojis = ['🪙', '💰', '💎', '🎰', '🎲'];
-        
-        function createCoin() {
-            const coin = document.createElement('div');
-            coin.className = 'coin';
-            coin.textContent = coinEmojis[Math.floor(Math.random() * coinEmojis.length)];
-            coin.style.left = Math.random() * 100 + '%';
-            coin.style.animationDelay = Math.random() * 15 + 's';
-            coin.style.animationDuration = (Math.random() * 10 + 10) + 's';
-            coinsContainer.appendChild(coin);
             
-            setTimeout(() => {
-                coin.remove();
-            }, 25000);
-        }
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = '';
+            });
+        });
 
-        // 每2秒創建一個新金幣
-        for (let i = 0; i < 5; i++) {
-            setTimeout(() => createCoin(), i * 2000);
-        }
-        setInterval(createCoin, 3000);
+        // Parallax effect for orbs
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            document.querySelectorAll('.orb').forEach((orb, index) => {
+                const speed = (index + 1) * 0.3;
+                orb.style.transform = `translateY(${scrolled * speed}px)`;
+            });
+        });
     </script>
 </body>
 </html>
