@@ -238,7 +238,7 @@
             cursor: pointer;
         }
 
-        /* Hero Section */
+        /* Hero Section - 背景圖 1 */
         .hero {
             margin-top: 80px;
             min-height: 50vh;
@@ -247,9 +247,23 @@
             justify-content: center;
             position: relative;
             overflow: hidden;
-            background: url('https://images.unsplash.com/photo-1596838132731-3301c3fd4317?w=1920&q=80') center/cover;
+            background: #000000 center/cover;
             z-index: 2;
             padding: 3rem 0;
+        }
+
+        .hero::after {
+            content: '1';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 20rem;
+            font-weight: 900;
+            color: #FFFFFF;
+            opacity: 0.3;
+            z-index: 1;
+            pointer-events: none;
         }
 
         .hero::before {
@@ -535,13 +549,27 @@
             transform: translateY(-3px);
         }
 
-        /* Casino Logos Section */
+        /* Casino Logos Section - 背景圖 2 */
         .casino-logos {
             padding: 3rem 2rem;
-            background: url('https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=1920&q=80') center/cover;
+            background: #000000 center/cover;
             position: relative;
             z-index: 2;
             margin-top: 0;
+        }
+
+        .casino-logos::after {
+            content: '2';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 20rem;
+            font-weight: 900;
+            color: #FFFFFF;
+            opacity: 0.3;
+            z-index: 1;
+            pointer-events: none;
         }
 
         .casino-logos::before {
@@ -662,13 +690,27 @@
             padding: 0.5rem;
         }
 
-        /* Bonus Section */
+        /* Bonus Section - 背景圖 3 */
         .bonus-section {
             padding: 6rem 2rem;
             position: relative;
-            background: url('https://images.unsplash.com/photo-1606889464198-fcb18894a52c?w=1920&q=80') center/cover;
+            background: #000000 center/cover;
             background-attachment: fixed;
             z-index: 2;
+        }
+
+        .bonus-section::after {
+            content: '3';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 20rem;
+            font-weight: 900;
+            color: #FFFFFF;
+            opacity: 0.3;
+            z-index: 1;
+            pointer-events: none;
         }
 
         .bonus-section::before {
@@ -864,13 +906,27 @@
             object-fit: cover;
         }
 
-        /* Games Section */
+        /* Games Section - 背景圖 4 */
         .games-section {
             padding: 6rem 2rem;
-            background: url('https://images.unsplash.com/photo-1596838132731-3301c3fd4317?w=1920&q=80') center/cover;
+            background: #000000 center/cover;
             background-attachment: fixed;
             position: relative;
             z-index: 2;
+        }
+
+        .games-section::after {
+            content: '4';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 20rem;
+            font-weight: 900;
+            color: #FFFFFF;
+            opacity: 0.3;
+            z-index: 1;
+            pointer-events: none;
         }
 
         .games-section::before {
@@ -968,13 +1024,27 @@
             padding-left: 1rem;
         }
 
-        /* About Section */
+        /* About Section - 背景圖 5 */
         .about-section {
             padding: 6rem 2rem;
-            background: url('https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=1920&q=80') center/cover;
+            background: #000000 center/cover;
             background-attachment: fixed;
             position: relative;
             z-index: 2;
+        }
+
+        .about-section::after {
+            content: '5';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 20rem;
+            font-weight: 900;
+            color: #FFFFFF;
+            opacity: 0.3;
+            z-index: 1;
+            pointer-events: none;
         }
 
         .about-section::before {
@@ -1010,13 +1080,27 @@
             text-align: left;
         }
 
-        /* FAQ Section */
+        /* FAQ Section - 背景圖 6 */
         .faq-section {
             padding: 6rem 2rem;
-            background: url('https://images.unsplash.com/photo-1606889464198-fcb18894a52c?w=1920&q=80') center/cover;
+            background: #000000 center/cover;
             background-attachment: fixed;
             position: relative;
             z-index: 2;
+        }
+
+        .faq-section::after {
+            content: '6';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 20rem;
+            font-weight: 900;
+            color: #FFFFFF;
+            opacity: 0.3;
+            z-index: 1;
+            pointer-events: none;
         }
 
         .faq-section::before {
@@ -1069,13 +1153,27 @@
             line-height: 1.8;
         }
 
-        /* Footer */
+        /* Footer - 背景圖 7 */
         footer {
-            background: url('https://images.unsplash.com/photo-1596838132731-3301c3fd4317?w=1920&q=80') center/cover;
+            background: #000000 center/cover;
             padding: 4rem 2rem 2rem;
             border-top: 1px solid rgba(96, 165, 250, 0.3);
             position: relative;
             z-index: 2;
+        }
+
+        footer::after {
+            content: '7';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 20rem;
+            font-weight: 900;
+            color: #FFFFFF;
+            opacity: 0.3;
+            z-index: 1;
+            pointer-events: none;
         }
 
         footer::before {
