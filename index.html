@@ -9,13 +9,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #D4AF37;
-            --secondary: #1A1A2E;
-            --accent: #FF6B6B;
-            --dark: #0F0F1E;
-            --light: #F8F9FA;
-            --gold-gradient: linear-gradient(135deg, #D4AF37 0%, #FFD700 50%, #FFA500 100%);
-            --dark-gradient: linear-gradient(135deg, #0F0F1E 0%, #1A1A2E 100%);
+            --primary: #3B82F6;
+            --secondary: #1E3A8A;
+            --accent: #60A5FA;
+            --dark: #0F172A;
+            --light: #F8FAFC;
+            --sapphire-gradient: linear-gradient(135deg, #3B82F6 0%, #2563EB 50%, #1E40AF 100%);
+            --dark-gradient: linear-gradient(135deg, #0F172A 0%, #1E3A8A 100%);
+            --blue-gradient: linear-gradient(135deg, #1E40AF 0%, #3B82F6 50%, #60A5FA 100%);
         }
 
         * {
@@ -99,11 +100,11 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(15, 15, 30, 0.95);
+            background: rgba(15, 23, 42, 0.95);
             backdrop-filter: blur(10px);
             z-index: 1000;
             padding: 1rem 0;
-            border-bottom: 2px solid rgba(212, 175, 55, 0.2);
+            border-bottom: 2px solid rgba(59, 130, 246, 0.3);
             box-shadow: 0 5px 30px rgba(0, 0, 0, 0.5);
         }
 
@@ -120,19 +121,12 @@
             font-family: 'Playfair Display', serif;
             font-size: 1.8rem;
             font-weight: 900;
-            background: var(--gold-gradient);
+            background: var(--sapphire-gradient);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
             letter-spacing: -1px;
             position: relative;
-            filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.5));
-            animation: logoGlow 2s ease-in-out infinite;
-        }
-
-        @keyframes logoGlow {
-            0%, 100% { filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.5)); }
-            50% { filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.8)); }
         }
 
         .nav-links {
@@ -157,7 +151,7 @@
             left: 0;
             width: 0;
             height: 2px;
-            background: var(--primary);
+            background: var(--sapphire-gradient);
             transition: width 0.3s;
         }
 
@@ -169,7 +163,7 @@
             display: none;
             background: none;
             border: none;
-            color: var(--primary);
+            color: #60A5FA;
             font-size: 1.5rem;
             cursor: pointer;
         }
@@ -177,18 +171,15 @@
         /* Hero Section */
         .hero {
             margin-top: 80px;
-            min-height: 90vh;
+            min-height: 50vh;
             display: flex;
             align-items: center;
             justify-content: center;
             position: relative;
             overflow: hidden;
-            background: 
-                linear-gradient(135deg, rgba(15, 15, 30, 0.85) 0%, rgba(26, 26, 46, 0.85) 50%, rgba(22, 33, 62, 0.85) 100%),
-                url('https://images.unsplash.com/photo-1596838132731-3301c3fd4317?w=1920&q=80') center/cover,
-                linear-gradient(135deg, #0F0F1E 0%, #1A1A2E 50%, #16213E 100%);
-            background-blend-mode: overlay, normal;
+            background: linear-gradient(135deg, #0F172A 0%, #1E3A8A 50%, #3B82F6 100%);
             z-index: 2;
+            padding: 3rem 0;
         }
 
         /* 老虎機裝飾元素 */
@@ -320,7 +311,7 @@
             position: absolute;
             width: 150%;
             height: 150%;
-            background: radial-gradient(circle at 30% 50%, rgba(212, 175, 55, 0.15) 0%, transparent 50%);
+            background: radial-gradient(circle at 30% 50%, rgba(59, 130, 246, 0.2) 0%, transparent 50%);
             animation: pulse 8s ease-in-out infinite;
         }
 
@@ -332,8 +323,8 @@
             width: 200%;
             height: 200%;
             background: 
-                radial-gradient(circle at 20% 30%, rgba(255, 215, 0, 0.1) 0%, transparent 40%),
-                radial-gradient(circle at 80% 70%, rgba(212, 175, 55, 0.1) 0%, transparent 40%);
+                radial-gradient(circle at 20% 30%, rgba(96, 165, 250, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 80% 70%, rgba(59, 130, 246, 0.15) 0%, transparent 40%);
             animation: rotate 20s linear infinite;
         }
 
@@ -371,31 +362,13 @@
             font-size: 4.5rem;
             font-weight: 900;
             margin-bottom: 1.5rem;
-            background: var(--gold-gradient);
+            background: linear-gradient(135deg, #60A5FA 0%, #3B82F6 50%, #FFFFFF 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
             line-height: 1.2;
             animation: fadeInUp 1s ease-out 0.2s both;
             position: relative;
-            text-shadow: 0 0 30px rgba(212, 175, 55, 0.5);
-            filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.3));
-        }
-
-        .hero h1::after {
-            content: '🎰';
-            position: absolute;
-            top: -20px;
-            right: -60px;
-            font-size: 3rem;
-            animation: spin 3s linear infinite;
-            filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.8));
-        }
-
-        @keyframes spin {
-            from { transform: rotate(0deg) scale(1); }
-            50% { transform: rotate(180deg) scale(1.2); }
-            to { transform: rotate(360deg) scale(1); }
         }
 
         .hero-buttons {
@@ -419,62 +392,37 @@
         }
 
         .btn-primary {
-            background: var(--gold-gradient);
-            color: var(--dark);
-            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+            background: var(--sapphire-gradient);
+            color: #FFFFFF;
+            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.4);
             position: relative;
             overflow: hidden;
         }
 
-        .btn-primary::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-            transform: rotate(45deg);
-            animation: shine 3s infinite;
-        }
-
-        @keyframes shine {
-            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
-            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
-        }
-
         .btn-primary:hover {
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.6), 0 0 30px rgba(255, 215, 0, 0.4);
-            animation: pulse-glow 1.5s ease-in-out infinite;
-        }
-
-        @keyframes pulse-glow {
-            0%, 100% { box-shadow: 0 15px 40px rgba(212, 175, 55, 0.6), 0 0 30px rgba(255, 215, 0, 0.4); }
-            50% { box-shadow: 0 15px 50px rgba(212, 175, 55, 0.8), 0 0 50px rgba(255, 215, 0, 0.6); }
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(59, 130, 246, 0.6);
         }
 
         .btn-secondary {
             background: transparent;
-            color: var(--primary);
-            border: 2px solid var(--primary);
+            color: #60A5FA;
+            border: 2px solid #3B82F6;
         }
 
         .btn-secondary:hover {
-            background: var(--primary);
-            color: var(--dark);
+            background: var(--sapphire-gradient);
+            color: #FFFFFF;
             transform: translateY(-3px);
         }
 
         /* Casino Logos Section */
         .casino-logos {
-            padding: 4rem 2rem;
-            background: 
-                linear-gradient(135deg, rgba(26, 26, 46, 0.85) 0%, rgba(20, 20, 35, 0.85) 100%),
-                url('https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=1920&q=80') center/cover;
-            backdrop-filter: blur(10px);
+            padding: 3rem 2rem;
+            background: linear-gradient(135deg, #1E3A8A 0%, #2563EB 100%);
             position: relative;
             z-index: 2;
+            margin-top: 0;
         }
 
         /* 老虎機背景裝飾 */
@@ -524,8 +472,8 @@
             max-width: 1400px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1.5rem;
             animation: fadeIn 1s ease-out;
         }
 
@@ -535,60 +483,41 @@
         }
 
         .casino-card {
-            background: 
-                linear-gradient(135deg, rgba(30, 30, 50, 0.85) 0%, rgba(20, 20, 35, 0.9) 100%),
-                url('https://images.unsplash.com/photo-1596838132731-3301c3fd4317?w=400&q=80') center/cover;
-            border-radius: 20px;
-            padding: 2rem;
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.9) 0%, rgba(37, 99, 235, 0.95) 100%);
+            border-radius: 15px;
+            padding: 1.5rem;
             text-align: center;
             transition: all 0.4s;
-            border: 2px solid rgba(212, 175, 55, 0.2);
+            border: 2px solid rgba(96, 165, 250, 0.4);
             cursor: pointer;
             position: relative;
             overflow: hidden;
-        }
-
-        .casino-card::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
-            opacity: 0;
-            transition: opacity 0.4s;
-        }
-
-        .casino-card:hover::before {
-            opacity: 1;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
         }
 
         .casino-card:hover {
             transform: translateY(-10px) scale(1.05);
-            border-color: var(--primary);
-            box-shadow: 0 20px 50px rgba(212, 175, 55, 0.5), 0 0 30px rgba(255, 215, 0, 0.3);
-            background: linear-gradient(135deg, rgba(40, 40, 60, 0.9) 0%, rgba(30, 30, 45, 0.95) 100%);
+            border-color: #60A5FA;
+            box-shadow: 0 20px 50px rgba(59, 130, 246, 0.5);
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.9) 0%, rgba(59, 130, 246, 0.95) 100%);
         }
 
         .casino-card img {
-            width: 120px;
-            height: 120px;
+            width: 100%;
+            height: auto;
+            max-width: 150px;
             object-fit: contain;
-            margin-bottom: 1rem;
-            border-radius: 15px;
+            margin-bottom: 0.5rem;
+            border-radius: 10px;
             background: rgba(255, 255, 255, 0.05);
-            padding: 1rem;
+            padding: 0.5rem;
         }
 
         /* Bonus Section */
         .bonus-section {
             padding: 6rem 2rem;
             position: relative;
-            background: 
-                linear-gradient(135deg, rgba(15, 15, 30, 0.9) 0%, rgba(26, 26, 46, 0.9) 100%),
-                url('https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=1920&q=80') center/cover;
-            background-attachment: fixed;
+            background: linear-gradient(135deg, #0F172A 0%, #1E3A8A 100%);
             z-index: 2;
         }
 
@@ -636,19 +565,12 @@
             font-weight: 900;
             text-align: center;
             margin-bottom: 3rem;
-            background: var(--gold-gradient);
+            background: var(--sapphire-gradient);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
             position: relative;
             z-index: 3;
-            filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.4));
-            animation: titleGlow 3s ease-in-out infinite;
-        }
-
-        @keyframes titleGlow {
-            0%, 100% { filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.4)); }
-            50% { filter: drop-shadow(0 0 30px rgba(255, 215, 0, 0.6)); }
         }
 
         .bonus-list {
@@ -662,29 +584,14 @@
         }
 
         .bonus-item {
-            background: linear-gradient(135deg, rgba(30, 30, 50, 0.6) 0%, rgba(20, 20, 35, 0.8) 100%);
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.6) 0%, rgba(37, 99, 235, 0.8) 100%);
             border-radius: 20px;
             padding: 2rem;
-            border-left: 5px solid var(--primary);
+            border-left: 5px solid #60A5FA;
             transition: all 0.3s;
             animation: slideInLeft 0.6s ease-out both;
             position: relative;
             overflow: hidden;
-        }
-
-        .bonus-item::before {
-            content: '💰';
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            font-size: 2rem;
-            opacity: 0.3;
-            animation: bounce 2s ease-in-out infinite;
-        }
-
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
         }
 
         @keyframes slideInLeft {
@@ -708,17 +615,12 @@
         .bonus-item:hover {
             transform: translateX(10px) scale(1.02);
             border-left-width: 8px;
-            box-shadow: 0 10px 40px rgba(212, 175, 55, 0.4), 0 0 20px rgba(255, 215, 0, 0.2);
-            background: linear-gradient(135deg, rgba(40, 40, 60, 0.7) 0%, rgba(30, 30, 45, 0.9) 100%);
-        }
-
-        .bonus-item:hover::before {
-            opacity: 0.8;
-            transform: scale(1.2) rotate(15deg);
+            box-shadow: 0 10px 40px rgba(59, 130, 246, 0.4);
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.7) 0%, rgba(59, 130, 246, 0.9) 100%);
         }
 
         .bonus-item h3 {
-            color: var(--primary);
+            color: #60A5FA;
             font-size: 1.3rem;
             margin-bottom: 1rem;
             font-weight: 600;
@@ -746,7 +648,7 @@
             overflow: hidden;
             position: relative;
             transition: all 0.4s;
-            border: 3px solid rgba(212, 175, 55, 0.3);
+            border: 3px solid rgba(59, 130, 246, 0.3);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
 
@@ -767,8 +669,8 @@
 
         .banner-card:hover {
             transform: scale(1.08);
-            border-color: var(--primary);
-            box-shadow: 0 20px 50px rgba(212, 175, 55, 0.5), 0 0 30px rgba(255, 215, 0, 0.3);
+            border-color: #60A5FA;
+            box-shadow: 0 20px 50px rgba(59, 130, 246, 0.5);
         }
 
         .banner-card img {
@@ -780,10 +682,7 @@
         /* Games Section */
         .games-section {
             padding: 6rem 2rem;
-            background: 
-                linear-gradient(180deg, rgba(15, 15, 30, 0.9) 0%, rgba(26, 26, 46, 0.9) 100%),
-                url('https://images.unsplash.com/photo-1606889464198-fcb18894a52c?w=1920&q=80') center/cover;
-            background-attachment: fixed;
+            background: linear-gradient(180deg, #1E3A8A 0%, #2563EB 100%);
             position: relative;
             z-index: 2;
         }
@@ -797,38 +696,20 @@
         }
 
         .game-card {
-            background: 
-                linear-gradient(135deg, rgba(30, 30, 50, 0.85) 0%, rgba(20, 20, 35, 0.9) 100%),
-                url('https://images.unsplash.com/photo-1606889464198-fcb18894a52c?w=400&q=80') center/cover;
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.85) 0%, rgba(37, 99, 235, 0.9) 100%);
             border-radius: 20px;
             overflow: hidden;
             transition: all 0.4s;
-            border: 2px solid rgba(212, 175, 55, 0.2);
+            border: 2px solid rgba(96, 165, 250, 0.3);
             cursor: pointer;
             position: relative;
         }
 
-        .game-card::after {
-            content: '🎲';
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            font-size: 1.5rem;
-            opacity: 0;
-            transition: all 0.3s;
-            filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.8));
-        }
-
-        .game-card:hover::after {
-            opacity: 1;
-            transform: rotate(360deg) scale(1.2);
-        }
-
         .game-card:hover {
-            transform: translateY(-10px) rotateY(5deg) scale(1.03);
-            border-color: var(--primary);
-            box-shadow: 0 20px 60px rgba(212, 175, 55, 0.5), 0 0 40px rgba(255, 215, 0, 0.3);
-            background: linear-gradient(135deg, rgba(40, 40, 60, 0.8) 0%, rgba(30, 30, 45, 0.95) 100%);
+            transform: translateY(-10px) scale(1.03);
+            border-color: #60A5FA;
+            box-shadow: 0 20px 60px rgba(59, 130, 246, 0.5);
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.9) 0%, rgba(59, 130, 246, 0.95) 100%);
         }
 
         .game-card img {
@@ -856,27 +737,24 @@
         }
 
         .game-link {
-            color: var(--primary);
+            color: #60A5FA;
             text-decoration: none;
             font-size: 0.9rem;
             transition: all 0.3s;
             padding: 0.5rem;
             border-radius: 8px;
-            background: rgba(212, 175, 55, 0.1);
+            background: rgba(59, 130, 246, 0.1);
         }
 
         .game-link:hover {
-            background: rgba(212, 175, 55, 0.2);
+            background: rgba(59, 130, 246, 0.2);
             padding-left: 1rem;
         }
 
         /* About Section */
         .about-section {
             padding: 6rem 2rem;
-            background: 
-                linear-gradient(135deg, rgba(26, 26, 46, 0.9) 0%, rgba(20, 20, 35, 0.9) 100%),
-                url('https://images.unsplash.com/photo-1596838132731-3301c3fd4317?w=1920&q=80') center/cover;
-            background-attachment: fixed;
+            background: linear-gradient(135deg, #2563EB 0%, #3B82F6 100%);
             position: relative;
             z-index: 2;
         }
@@ -890,7 +768,7 @@
         .about-content h2 {
             font-family: 'Playfair Display', serif;
             font-size: 2.5rem;
-            color: var(--primary);
+            color: #60A5FA;
             margin-bottom: 2rem;
         }
 
@@ -904,10 +782,7 @@
         /* FAQ Section */
         .faq-section {
             padding: 6rem 2rem;
-            background: 
-                linear-gradient(135deg, rgba(15, 15, 30, 0.9) 0%, rgba(26, 26, 46, 0.9) 100%),
-                url('https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=1920&q=80') center/cover;
-            background-attachment: fixed;
+            background: linear-gradient(135deg, #0F172A 0%, #1E3A8A 100%);
             position: relative;
             z-index: 2;
         }
@@ -918,22 +793,22 @@
         }
 
         .faq-item {
-            background: linear-gradient(135deg, rgba(30, 30, 50, 0.5) 0%, rgba(20, 20, 35, 0.7) 100%);
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.5) 0%, rgba(37, 99, 235, 0.7) 100%);
             border-radius: 15px;
             margin-bottom: 1.5rem;
-            border: 1px solid rgba(212, 175, 55, 0.2);
+            border: 1px solid rgba(96, 165, 250, 0.3);
             overflow: hidden;
             transition: all 0.3s;
         }
 
         .faq-item:hover {
-            border-color: var(--primary);
+            border-color: #60A5FA;
         }
 
         .faq-question {
             padding: 1.5rem;
             font-weight: 600;
-            color: var(--primary);
+            color: #60A5FA;
             cursor: pointer;
             font-size: 1.1rem;
         }
@@ -946,11 +821,9 @@
 
         /* Footer */
         footer {
-            background: 
-                linear-gradient(135deg, rgba(26, 26, 46, 0.95) 0%, rgba(20, 20, 35, 0.95) 100%),
-                url('https://images.unsplash.com/photo-1596838132731-3301c3fd4317?w=1920&q=80') center/cover;
+            background: linear-gradient(135deg, #1E3A8A 0%, #2563EB 100%);
             padding: 4rem 2rem 2rem;
-            border-top: 1px solid rgba(212, 175, 55, 0.2);
+            border-top: 1px solid rgba(96, 165, 250, 0.3);
             position: relative;
             z-index: 2;
         }
@@ -965,7 +838,7 @@
         }
 
         .footer-section h3 {
-            color: var(--primary);
+            color: #60A5FA;
             font-family: 'Playfair Display', serif;
             font-size: 1.5rem;
             margin-bottom: 1rem;
@@ -986,7 +859,7 @@
         }
 
         .footer-links a:hover {
-            color: var(--primary);
+            color: #60A5FA;
             padding-left: 5px;
         }
 
@@ -994,7 +867,7 @@
             text-align: center;
             color: rgba(248, 249, 250, 0.5);
             padding-top: 2rem;
-            border-top: 1px solid rgba(212, 175, 55, 0.1);
+            border-top: 1px solid rgba(96, 165, 250, 0.2);
         }
 
         /* Responsive */
@@ -1055,47 +928,6 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <!-- 老虎機裝飾 -->
-        <div class="slot-machine-decoration">
-            <div class="slot-reel slot-reel-1">
-                <div class="slot-symbols">
-                    <div class="slot-symbol">🍒</div>
-                    <div class="slot-symbol">🍋</div>
-                    <div class="slot-symbol">🍊</div>
-                    <div class="slot-symbol">⭐</div>
-                    <div class="slot-symbol">💎</div>
-                    <div class="slot-symbol">7️⃣</div>
-                </div>
-            </div>
-            <div class="slot-reel slot-reel-2">
-                <div class="slot-symbols">
-                    <div class="slot-symbol">🍒</div>
-                    <div class="slot-symbol">🍋</div>
-                    <div class="slot-symbol">🍊</div>
-                    <div class="slot-symbol">⭐</div>
-                    <div class="slot-symbol">💎</div>
-                    <div class="slot-symbol">7️⃣</div>
-                </div>
-            </div>
-            <div class="slot-reel slot-reel-3">
-                <div class="slot-symbols">
-                    <div class="slot-symbol">🍒</div>
-                    <div class="slot-symbol">🍋</div>
-                    <div class="slot-symbol">🍊</div>
-                    <div class="slot-symbol">⭐</div>
-                    <div class="slot-symbol">💎</div>
-                    <div class="slot-symbol">7️⃣</div>
-                </div>
-            </div>
-        </div>
-        <!-- 老虎機燈光 -->
-        <div class="slot-lights">
-            <div class="light-bulb"></div>
-            <div class="light-bulb"></div>
-            <div class="light-bulb"></div>
-            <div class="light-bulb"></div>
-            <div class="light-bulb"></div>
-        </div>
         <div class="hero-content">
             <h1>မြန်မာ အွန်လိုင်း ကာစီနို</h1>
             <div class="hero-buttons">
@@ -1108,13 +940,6 @@
     <!-- Casino Logos -->
     <!-- 🔗 連結位置 1: Casino Logos 區塊 - 需要更換的賭場連結 -->
     <section class="casino-logos">
-        <!-- 老虎機背景裝飾 -->
-        <div class="slot-bg-decoration">
-            <div class="slot-icon">🎰</div>
-            <div class="slot-icon">🎲</div>
-            <div class="slot-icon">🎰</div>
-            <div class="slot-icon">🎲</div>
-        </div>
         <div class="casino-grid">
             <!-- Myan99 連結 -->
             <a href="https://www.myan99.me/m/home?affiliateCode=seom201" class="casino-card">
@@ -1140,14 +965,6 @@
 
     <!-- Bonus Section -->
     <section id="bonus" class="bonus-section">
-        <!-- 獎金區老虎機特效 -->
-        <div class="bonus-slot-effect">
-            <div class="spinning-symbol" style="top: 10%; left: 5%;">🎰</div>
-            <div class="spinning-symbol" style="top: 20%; right: 8%; animation-delay: 0.5s;">🎲</div>
-            <div class="spinning-symbol" style="bottom: 15%; left: 10%; animation-delay: 1s;">💎</div>
-            <div class="spinning-symbol" style="bottom: 25%; right: 12%; animation-delay: 1.5s;">⭐</div>
-            <div class="spinning-symbol" style="top: 50%; left: 50%; animation-delay: 2s;">7️⃣</div>
-        </div>
         <h2 class="section-title">ဂိမ်းဘောနပ်စ်များ ရယူပါ!</h2>
         <div class="bonus-list">
             <div class="bonus-item">
@@ -1424,8 +1241,8 @@
             <div class="footer-section">
                 <h3>Any questions?</h3>
                 <!-- 🔗 連結位置 5: Email 連結 -->
-                <p style="color: var(--primary); margin-bottom: 1rem;">
-                    <a href="mailto:myanmar@contact.com" style="color: var(--primary); text-decoration: none;">myanmar@contact.com</a>
+                <p style="color: #60A5FA; margin-bottom: 1rem;">
+                    <a href="mailto:myanmar@contact.com" style="color: #60A5FA; text-decoration: none;">myanmar@contact.com</a>
                 </p>
                 <h3 style="margin-top: 2rem;">Our Location</h3>
                 <p style="color: rgba(248, 249, 250, 0.7);">Yangon, Myanmar</p>
