@@ -44,6 +44,76 @@
             pointer-events: none;
         }
 
+        /* 閃閃發光特效 */
+        .sparkle {
+            position: fixed;
+            width: 4px;
+            height: 4px;
+            background: #FFFFFF;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 999;
+            box-shadow: 0 0 10px #FFFFFF, 0 0 20px #60A5FA, 0 0 30px #3B82F6;
+            animation: sparkleAnimation 2s ease-in-out infinite;
+        }
+
+        @keyframes sparkleAnimation {
+            0%, 100% {
+                opacity: 0;
+                transform: scale(0) rotate(0deg);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1) rotate(180deg);
+            }
+        }
+
+        .star {
+            position: fixed;
+            width: 6px;
+            height: 6px;
+            background: #FFFFFF;
+            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+            pointer-events: none;
+            z-index: 999;
+            animation: starTwinkle 1.5s ease-in-out infinite;
+            box-shadow: 0 0 15px #FFFFFF, 0 0 25px #60A5FA;
+        }
+
+        @keyframes starTwinkle {
+            0%, 100% {
+                opacity: 0.3;
+                transform: scale(0.8);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.2);
+            }
+        }
+
+        .glow-dot {
+            position: fixed;
+            width: 8px;
+            height: 8px;
+            background: radial-gradient(circle, #60A5FA 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 999;
+            animation: glowPulse 2s ease-in-out infinite;
+            box-shadow: 0 0 20px #60A5FA, 0 0 40px #3B82F6;
+        }
+
+        @keyframes glowPulse {
+            0%, 100% {
+                opacity: 0.4;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.5);
+            }
+        }
+
         /* 閃爍的金幣裝飾 */
         .floating-coins {
             position: fixed;
@@ -177,7 +247,10 @@
             justify-content: center;
             position: relative;
             overflow: hidden;
-            background: linear-gradient(135deg, #0F172A 0%, #1E3A8A 50%, #3B82F6 100%);
+            background: 
+                linear-gradient(135deg, rgba(15, 23, 42, 0.85) 0%, rgba(30, 58, 138, 0.85) 50%, rgba(59, 130, 246, 0.85) 100%),
+                url('https://images.unsplash.com/photo-1596838132731-3301c3fd4317?w=1920&q=80') center/cover;
+            background-blend-mode: overlay;
             z-index: 2;
             padding: 3rem 0;
         }
@@ -367,8 +440,18 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
             line-height: 1.2;
-            animation: fadeInUp 1s ease-out 0.2s both;
+            animation: fadeInUp 1s ease-out 0.2s both, titleShimmer 3s ease-in-out infinite;
             position: relative;
+            filter: drop-shadow(0 0 20px rgba(96, 165, 250, 0.5));
+        }
+
+        @keyframes titleShimmer {
+            0%, 100% {
+                filter: drop-shadow(0 0 20px rgba(96, 165, 250, 0.5));
+            }
+            50% {
+                filter: drop-shadow(0 0 40px rgba(96, 165, 250, 0.9));
+            }
         }
 
         .hero-buttons {
@@ -394,14 +477,41 @@
         .btn-primary {
             background: var(--sapphire-gradient);
             color: #FFFFFF;
-            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.4);
+            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.4), 0 0 20px rgba(96, 165, 250, 0.3);
             position: relative;
             overflow: hidden;
+            animation: buttonGlow 2s ease-in-out infinite;
+        }
+
+        @keyframes buttonGlow {
+            0%, 100% {
+                box-shadow: 0 10px 30px rgba(59, 130, 246, 0.4), 0 0 20px rgba(96, 165, 250, 0.3);
+            }
+            50% {
+                box-shadow: 0 10px 40px rgba(59, 130, 246, 0.6), 0 0 40px rgba(96, 165, 250, 0.6);
+            }
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transform: rotate(45deg);
+            animation: buttonShine 2s infinite;
+        }
+
+        @keyframes buttonShine {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
         }
 
         .btn-primary:hover {
             transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(59, 130, 246, 0.6);
+            box-shadow: 0 15px 50px rgba(59, 130, 246, 0.8), 0 0 50px rgba(96, 165, 250, 0.8);
         }
 
         .btn-secondary {
@@ -419,7 +529,10 @@
         /* Casino Logos Section */
         .casino-logos {
             padding: 3rem 2rem;
-            background: linear-gradient(135deg, #1E3A8A 0%, #2563EB 100%);
+            background: 
+                linear-gradient(135deg, rgba(30, 58, 138, 0.9) 0%, rgba(37, 99, 235, 0.9) 100%),
+                url('https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=1920&q=80') center/cover;
+            background-blend-mode: overlay;
             position: relative;
             z-index: 2;
             margin-top: 0;
@@ -492,13 +605,30 @@
             cursor: pointer;
             position: relative;
             overflow: hidden;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3), 0 0 30px rgba(96, 165, 250, 0.2);
+        }
+
+        .casino-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transform: rotate(45deg);
+            animation: cardShine 3s infinite;
+        }
+
+        @keyframes cardShine {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
         }
 
         .casino-card:hover {
             transform: translateY(-10px) scale(1.05);
             border-color: #60A5FA;
-            box-shadow: 0 20px 50px rgba(59, 130, 246, 0.5);
+            box-shadow: 0 20px 50px rgba(59, 130, 246, 0.5), 0 0 60px rgba(96, 165, 250, 0.6);
             background: linear-gradient(135deg, rgba(37, 99, 235, 0.9) 0%, rgba(59, 130, 246, 0.95) 100%);
         }
 
@@ -517,7 +647,11 @@
         .bonus-section {
             padding: 6rem 2rem;
             position: relative;
-            background: linear-gradient(135deg, #0F172A 0%, #1E3A8A 100%);
+            background: 
+                linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(30, 58, 138, 0.9) 100%),
+                url('https://images.unsplash.com/photo-1606889464198-fcb18894a52c?w=1920&q=80') center/cover;
+            background-attachment: fixed;
+            background-blend-mode: overlay;
             z-index: 2;
         }
 
@@ -571,6 +705,8 @@
             background-clip: text;
             position: relative;
             z-index: 3;
+            animation: titleShimmer 3s ease-in-out infinite;
+            filter: drop-shadow(0 0 15px rgba(96, 165, 250, 0.4));
         }
 
         .bonus-list {
@@ -592,6 +728,23 @@
             animation: slideInLeft 0.6s ease-out both;
             position: relative;
             overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3), 0 0 15px rgba(96, 165, 250, 0.2);
+        }
+
+        .bonus-item::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            animation: bonusShine 3s infinite;
+        }
+
+        @keyframes bonusShine {
+            0% { left: -100%; }
+            100% { left: 100%; }
         }
 
         @keyframes slideInLeft {
@@ -615,7 +768,7 @@
         .bonus-item:hover {
             transform: translateX(10px) scale(1.02);
             border-left-width: 8px;
-            box-shadow: 0 10px 40px rgba(59, 130, 246, 0.4);
+            box-shadow: 0 10px 40px rgba(59, 130, 246, 0.4), 0 0 30px rgba(96, 165, 250, 0.5);
             background: linear-gradient(135deg, rgba(37, 99, 235, 0.7) 0%, rgba(59, 130, 246, 0.9) 100%);
         }
 
@@ -682,7 +835,11 @@
         /* Games Section */
         .games-section {
             padding: 6rem 2rem;
-            background: linear-gradient(180deg, #1E3A8A 0%, #2563EB 100%);
+            background: 
+                linear-gradient(180deg, rgba(30, 58, 138, 0.9) 0%, rgba(37, 99, 235, 0.9) 100%),
+                url('https://images.unsplash.com/photo-1596838132731-3301c3fd4317?w=1920&q=80') center/cover;
+            background-attachment: fixed;
+            background-blend-mode: overlay;
             position: relative;
             z-index: 2;
         }
@@ -703,12 +860,25 @@
             border: 2px solid rgba(96, 165, 250, 0.3);
             cursor: pointer;
             position: relative;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3), 0 0 20px rgba(96, 165, 250, 0.2);
+        }
+
+        .game-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transform: rotate(45deg);
+            animation: cardShine 4s infinite;
         }
 
         .game-card:hover {
             transform: translateY(-10px) scale(1.03);
             border-color: #60A5FA;
-            box-shadow: 0 20px 60px rgba(59, 130, 246, 0.5);
+            box-shadow: 0 20px 60px rgba(59, 130, 246, 0.5), 0 0 50px rgba(96, 165, 250, 0.6);
             background: linear-gradient(135deg, rgba(37, 99, 235, 0.9) 0%, rgba(59, 130, 246, 0.95) 100%);
         }
 
@@ -754,7 +924,11 @@
         /* About Section */
         .about-section {
             padding: 6rem 2rem;
-            background: linear-gradient(135deg, #2563EB 0%, #3B82F6 100%);
+            background: 
+                linear-gradient(135deg, rgba(37, 99, 235, 0.9) 0%, rgba(59, 130, 246, 0.9) 100%),
+                url('https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=1920&q=80') center/cover;
+            background-attachment: fixed;
+            background-blend-mode: overlay;
             position: relative;
             z-index: 2;
         }
@@ -782,7 +956,11 @@
         /* FAQ Section */
         .faq-section {
             padding: 6rem 2rem;
-            background: linear-gradient(135deg, #0F172A 0%, #1E3A8A 100%);
+            background: 
+                linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(30, 58, 138, 0.9) 100%),
+                url('https://images.unsplash.com/photo-1606889464198-fcb18894a52c?w=1920&q=80') center/cover;
+            background-attachment: fixed;
+            background-blend-mode: overlay;
             position: relative;
             z-index: 2;
         }
@@ -821,7 +999,10 @@
 
         /* Footer */
         footer {
-            background: linear-gradient(135deg, #1E3A8A 0%, #2563EB 100%);
+            background: 
+                linear-gradient(135deg, rgba(30, 58, 138, 0.95) 0%, rgba(37, 99, 235, 0.95) 100%),
+                url('https://images.unsplash.com/photo-1596838132731-3301c3fd4317?w=1920&q=80') center/cover;
+            background-blend-mode: overlay;
             padding: 4rem 2rem 2rem;
             border-top: 1px solid rgba(96, 165, 250, 0.3);
             position: relative;
@@ -1350,14 +1531,14 @@
             }
 
             draw() {
-                ctx.fillStyle = `rgba(212, 175, 55, ${this.opacity})`;
+                ctx.fillStyle = `rgba(96, 165, 250, ${this.opacity})`;
                 ctx.beginPath();
                 ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
                 ctx.fill();
                 
                 // 添加光暈效果
-                ctx.shadowBlur = 10;
-                ctx.shadowColor = 'rgba(212, 175, 55, 0.8)';
+                ctx.shadowBlur = 15;
+                ctx.shadowColor = 'rgba(96, 165, 250, 0.8)';
                 ctx.fill();
                 ctx.shadowBlur = 0;
             }
